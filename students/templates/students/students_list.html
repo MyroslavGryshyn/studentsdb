@@ -36,9 +36,10 @@
     <div class="row" id="sub-header"> 
       <div class="col-xs-12">
         <ul class="nav nav-tabs" role="tablist">
-          <li role="presentation" class="active"><a href="#">Студенти</a></li>
-          <li role="presentation"><a href="#">Відвідування</a></li>
-          <li role="presentation"><a href="#">Групи</a></li>
+            <li role="presentation" class="active"><a href="{% url
+            "home" %} ">Студенти</a></li>
+          <li role="presentation"><a href="/journal">Відвідування</a></li>
+          <li role="presentation"><a href="{% url "groups" %}">Групи</a></li>
         </ul>
       </div>
     </div>
@@ -51,7 +52,7 @@
         <div class="alert alert-warning" role="alert">Студент успішно доданий.</div>
 
         <h2>База Студентів</h2>
-        <a href="/students/add" class="btn btn-primary">Додати Студента</a>
+        <a href="{% url "students_add" %}" class="btn btn-primary">Додати Студента</a>
         
         <!-- Start Students Listing -->
         <table class="table">
@@ -69,8 +70,8 @@
             <tr>
               <td>1</td>
               <td><img class="img-circle" src="./img/podoba3.jpg" height="30" width="30" /></td>
-              <td><a href="/students/1/edit">Корост</td>
-              <td><a href="/students/1/edit">Андрій</td>
+              <td><a href="{% url "students_edit" 1 %}">Корост</td>
+              <td><a href="{% url "students_edit" 1 %}">Андрій</td>
               <td>2123</td>
               <td>
                 <div class="btn-group">
@@ -79,9 +80,9 @@
                     <span class="caret"></span>
                   </button>
                   <ul class="dropdown-menu" role="menu">
-                    <li><a href="/students/1/edit">Редагувати</a></li>
+                      <li><a href="{% url "students_edit" 1 %}">Редагувати</a></li>
                     <li><a href="/journal/1">Відвідування</a></li>
-                    <li><a href="/students/1/delete">Видалити</a></li>
+                    <li><a href="{% url "students_delete" 1 %}">Видалити</a></li>
                   </ul>
                 </div>
               </td>
@@ -89,8 +90,8 @@
             <tr>
               <td>2</td>
               <td><img class="img-circle" src="./img/podoba3.jpg" height="30" width="30" /></td>
-              <td><a href="/students/2/edit">Мирослав</td>
-              <td><a href="/students/2/edit">Ракатош</td>
+              <td><a href="{% url "students_edit" 2 %}">Мирослав</td>
+              <td><a href="{% url "students_edit" 2 %}">Ракатош</td>
               <td>2123</td>
               <td>
                 <div class="btn-group">
@@ -99,9 +100,9 @@
                     <span class="caret"></span>
                   </button>
                   <ul class="dropdown-menu" role="menu">
-                    <li><a href="/students/2/edit">Редагувати</a></li>
+                      <li><a href="{% url "students_edit" 2 %}">Редагувати</a></li>
                     <li><a href="/journal/2">Відвідування</a></li>
-                    <li><a href="/students/2/delete">Видалити</a></li>
+                    <li><a href="{% url "students_edit" 2 %}">Видалити</a></li>
                   </ul>
                 </div>
               </td>
