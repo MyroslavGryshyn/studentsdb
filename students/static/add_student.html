@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Сервіс Обліку Студентів</title>
+  <meta name="description" value="Система Обліку Студентів Навчального Закладу" />
+
+  <link rel="stylesheet" href="./css/main.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/bootstrap/3.3.0/css/bootstrap.min.css">
+</head>
+<body>
+
+  <!-- Start Container -->
+  <div class="container">
+    <!-- Start Header -->
+      <div class="row" id="header"> 
+        <div class="col-xs-12" align="center">
+          <h1>Сервіс Обліку Студентів</h1>
+        </div>
+      </div>
+
+      <div class="col-xs-4"></div>
+
+      <div class="col-xs-4" align="center">
+        <form class="form-horizontal">
+          <div class="form-group">
+            <label for="Name" class="col-sm-5 control-label">
+              Ім'я
+            </label>
+            <div class="col-sm-6">
+              <input type="name" class="form-control" id="inputname" 
+                  placeholder="Ім'я">
+            </div>
+          </div>
+  
+          <div class="form-group">
+            <label for="inputFathername" class="col-sm-5 control-label">
+              По-батькові
+            </label>
+            <div class="col-sm-6">
+              <input type="fathername" class="form-control" 
+                    id="inputFathername3" placeholder="По-батькові">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="inputSurname3" class="col-sm-5 control-label">
+              Прізвище 
+            </label>
+            <div class="col-sm-6">
+              <input type="surname" class="form-control" 
+                id="inputPassword3" placeholder="Прізвище">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="inputTicket3" class="col-sm-5 control-label">
+             Білет 
+            </label>
+            <div class="col-sm-6">
+              <input type="ticket" class="form-control" id="inputTicket3" 
+                  placeholder="Білет">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="inputDOB3" class="col-sm-5 control-label">
+              Дата народження
+            </label>
+            <div class="col-sm-6">
+                  <input class="form-control" type="datetime" >
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="InputFile" class="col-sm-5 control-label">Фото</label>
+            <input type="file" id="InputPhoto" class="col-sm-6">
+            <p class="help-block">Завантажте, будь ласка, фото.</p>
+          </div>
+        
+          <div class="form-group">
+            <label class="col-sm-5 control-label" for="sel1">Група</label>
+            <div class="col-sm-6">
+              <select class="form-control" id="sel1">
+                <option>ТО-31</option>
+                <option>ТО-32</option>
+                <option>ТО-33</option>
+                <option>ТО-34</option>
+              </select>
+            </div>
+          </div>
+
+
+          <div class="form-group">
+            <label class="col-sm-4 control-label" for="group"></label>
+          <div class="form-group">
+              <button type="button" class="btn btn-primary btn-sm">Зберегти
+              </button>
+              <button type="button" class="btn btn-link">Скасувати
+              </button>
+  
+          </div>
+          </div>
+ 
+     </form>                 
+
+    </div>
+
+ 
+  </div>
+  <!-- End Container -->
+  
+   <!-- Javascripts Inclusion -->
+     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+     <script src="https://cdn.jsdelivr.net/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+</body>
+</html>
