@@ -12,7 +12,7 @@
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/bootstrap/3.3.0/css/bootstrap.min.css">
   <link rel="stylesheet"
-        href="{% static "css/main.css"%}">
+        href="{{ PORTAL_URL }}{% static "css/main.css" %}">
   {% block extra_css %}{% endblock extra_css %}
 </head>
 <body>
@@ -57,7 +57,6 @@
     </div>
   </div>
   <!-- End subheader -->
-  {{ studentsdb.urls }} 
   <!-- Start Content Columns -->
   <div class="row" id="content-columns">
     <div class="col-xs-12" id="content-column">
