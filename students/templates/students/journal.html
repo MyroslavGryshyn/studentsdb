@@ -1,0 +1,56 @@
+{% extends "students/base.html" %}
+
+{% load static from staticfiles %}
+
+{% block meta_title %}Відвідування{% endblock meta_title %}
+
+{% block title %}Облік відвідування{% endblock title %}
+
+{% block content %}
+
+<!-- Start Students Listing -->
+<table class="table table-striped">
+  <tbody>
+   <div align="center" class="col-xs-12"><a href="#">&larr;</a>
+    <b>
+      {{ month }}
+      Month Year
+    </b><a href="#">&rarr;</a>
+   </div>
+ <!-- Starts Students Listing -->
+    <table class="table table-bordered table-hover">
+      <thead>
+      <tr>
+        <th>#</th>
+      <th>Студент</th>
+       {% for x in "xxxxxxx" %}
+        <th>Day 1</th>
+       {% endfor %}
+    </thead>
+
+    <tbody>
+   {% for student in journal_list %}
+      <tr>
+        <td>{{ forloop.counter }}</td>
+        <td><a href="">{{student.surname}}<br>{{student.name}}</a></td>
+        {% for day in student.date%}
+        <td><input type="checkbox"/></td>
+        {% endfor %}
+      </tr>
+    </tbody> 
+   {% endfor %}
+</table>
+<!-- End Students Listing -->
+
+<nav>
+  <ul class="pagination">
+    <li><a href="#">1</a></li>
+    <li class="active"><a href="#">2</a></li>
+    <li><a href="#">Далі</a></li>
+  </ul>
+</nav>
+{% endblock content %}
+
+{% block footer %}
+  &copy; 2015 Сервіс Обліку Студентів
+{% endblock footer %}

@@ -44,7 +44,7 @@
           <a href="{{the_home}}">Студенти</a></li>
           </li>
           {% url 'journal' as the_journal %} 
-          <li role="presentation" {% if "the_journal" in request.path %}
+          <li role="presentation" {% if the_journal in request.path %}
               class="active"{% endif %}>
               <a href="{{ the_journal }}">Відвідування</a>
           </li>
@@ -72,7 +72,7 @@
     <!-- Start Footer -->
     <div class="row" id="footer">
       <div class="col-xs-12">
-        &copy; 2014 Сервіс Обліку Студентів
+      {% block footer %}{% endblock footer %}
       </div>
     </div>
     <!-- End Footer -->
