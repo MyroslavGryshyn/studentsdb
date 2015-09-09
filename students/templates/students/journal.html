@@ -23,8 +23,8 @@
       <tr>
         <th>#</th>
       <th>Студент</th>
-       {% for x in "xxxxxxx" %}
-        <th>Day 1</th>
+       {% for day in journal_list.0.date.keys %}
+       <th>{{day}}</th>
        {% endfor %}
     </thead>
 
@@ -33,8 +33,8 @@
       <tr>
         <td>{{ forloop.counter }}</td>
         <td><a href="">{{student.surname}}<br>{{student.name}}</a></td>
-        {% for day in student.date%}
-        <td><input type="checkbox"/></td>
+        {% for present in student.date.values%}
+        <td><input type="checkbox" {% if present %}checked{%endif%}/></td>
         {% endfor %}
       </tr>
     </tbody> 
@@ -42,13 +42,8 @@
 </table>
 <!-- End Students Listing -->
 
-<nav>
-  <ul class="pagination">
-    <li><a href="#">1</a></li>
-    <li class="active"><a href="#">2</a></li>
-    <li><a href="#">Далі</a></li>
-  </ul>
-</nav>
+{% include "students/pagination.html" %}
+
 {% endblock content %}
 
 {% block footer %}
