@@ -9,7 +9,7 @@ from ..models import Student
 def students_list(request):
     students = Student.objects.all()
 
-    # try to order students list
+    # Ordering students list
     order_by = request.GET.get('order_by', '')
 
     if order_by in ('last_name', 'first_name', 'ticket'):
