@@ -26,7 +26,7 @@ def students_list(request):
     except (ValueError, TypeError):
         page = 1
 
-    per_page = 3
+    per_page = 2
 
     num_pages, remainder = divmod(len(students), per_page)
     number_of_pages = num_pages + 1 if remainder else num_pages
