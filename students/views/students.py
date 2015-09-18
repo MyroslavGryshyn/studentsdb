@@ -33,7 +33,7 @@ def students_list(request):
 
     if page <= 1:
         page = 1
-    elif page > number_of_pages:
+    elif page > number_of_pages and number_of_pages:
         page = number_of_pages
 
     students = students[((int(page)-1)*per_page):((int(page)-1)*per_page+per_page)]
