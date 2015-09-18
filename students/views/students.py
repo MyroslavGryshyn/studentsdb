@@ -26,20 +26,22 @@ def students_list(request):
     except (ValueError, TypeError):
         page = 1
 
-    per_page = 2
+    per_page = 3
 
     num_pages, remainder = divmod(len(students), per_page)
     number_of_pages = num_pages + 1 if remainder else num_pages
 
-    if page < 1:
+    if page <= 1:
         page = 1
     elif page > number_of_pages:
         page = number_of_pages
 
     students = students[((int(page)-1)*per_page):((int(page)-1)*per_page+per_page)]
                         
-    return render(request, 'students/students_list.html',
-                  {'students': students, 'pages': [x for x in xrange(1, number_of_pages+1)], 'page': page})
+    return render(request, 'students/students_list.html', \
+                  {'students': students,  \
+                   'pages': [x for x in xrange(1, number_of_pages+1)], \
+                   'page': page})
 
 def students_add(request):
     return HttpResponse('<h1>Student Add Form</h1>')
