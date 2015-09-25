@@ -22,5 +22,10 @@ class Migration(migrations.Migration):
                 ('ticket', models.CharField(max_length=256, verbose_name='\u0411\u0456\u043b\u0435\u0442')),
                 ('notes', models.TextField(verbose_name='\u0414\u043e\u0434\u0430\u0442\u043a\u043e\u0432\u0456 \u043d\u043e\u0442\u0430\u0442\u043a\u0438', blank=True)),
             ],
+            options={
+                'ordering': ['id'],
+                'verbose_name': '\u0421\u0442\u0443\u0434\u0435\u043d\u0442',
+                'verbose_name_plural': '\u0421\u0442\u0443\u0434\u0435\u043d\u0442\u0438',
+            },
         ),
     ]
