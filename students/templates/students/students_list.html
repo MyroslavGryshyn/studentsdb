@@ -92,41 +92,27 @@
 </table>
 <!-- End Students Listing -->
 
-{% if pages %}
-
-{{ page }}
-
-{{ pages }}
-<div class="span7 text-center">
-  <button type="button" class="btn btn-primary" id="load-more" align="center">Load more ...</button>
-</div>
-
-{% comment %}
-
+{% if students.has_other_pages %}
 {% with order_by=request.GET.order_by reverse=request.GET.reverse %}
 <nav>
   <ul class="pagination">
     <li>
       <a href="{% url "home" %}?page=1&amp;order_by={{ order_by }}&amp;reverse={{ reverse }}">&laquo;</a>
     </li>
-    {% for p in pages %}
-    <li {% if page|add:"0" == p %}class="active"{% endif %}>
+    {% for p in students.paginator.page_range %}
+    <li {% if students.number == p %}class="active"{% endif %}>
       <a href="{% url "home" %}?page={{ p }}&amp;order_by={{ order_by }}&amp;reverse={{ reverse }}">{{ p }}</a>
     </li>
     {% endfor %}
     <li>
-      <a href="{% url "home" %}?page={{ pages|length }}&amp;order_by={{ order_by }}&amp;reverse={{ reverse }}">&raquo;</a>
+      <a href="{% url "home" %}?page={{ students.paginator.num_pages }}&amp;order_by={{ order_by }}&amp;reverse={{ reverse }}">
+        &raquo;</a>
     </li>
   </ul>
 </nav>
 {% endwith %}
-
-{% endcomment %}
-</br>
 {% endif %}
-
-{% endblock content %} 
-
+{% endblock content %}
 
 {% block footer %}
   &copy; 2014 Сервіс Обліку Студентів
@@ -134,7 +120,4 @@
 
 {% block extra_js %}
 <script src="{% static "js/load-page.js" %}"></script>
-
-
-
 {% endblock extra_js %}
