@@ -1,0 +1,105 @@
+[
+{
+    "fields": {
+        "username": "mero",
+        "first_name": "",
+        "last_name": "",
+        "is_active": true,
+        "is_superuser": true,
+        "is_staff": true,
+        "last_login": "2015-09-30T16:46:31.115Z",
+        "groups": [],
+        "user_permissions": [],
+        "password": "pbkdf2_sha256$20000$0PCYDsm4JoT0$U23cug6lTvmuw1sNQvZe/2sXlizqYju70Ll1fxdK7Dc=",
+        "email": "",
+        "date_joined": "2015-09-30T16:46:13.273Z"
+    },
+    "model": "auth.user",
+    "pk": 1
+},
+{
+    "fields": {
+        "expire_date": "2015-10-14T16:46:31.233Z",
+        "session_data": "ZmNlZDU1YWQ2NmFmYzcxZTg0MTU5NmU4MDE2ZTk2NDI5NmMyZmQwODp7Il9hdXRoX3VzZXJfaGFzaCI6ImFlYzY1MGYwMDRjZTczYjA1NjA5Mjg0YWFmNTM5Nzg5Mjg3OTdlMDYiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOiIxIn0="
+    },
+    "model": "sessions.session",
+    "pk": "ao473bjt65j08uns3nc1hwz0ungmlcbn"
+},
+{
+    "fields": {
+        "first_name": "\u0410\u043d\u0442\u043e\u043d\u0456\u043e",
+        "last_name": "\u041f\u0430\u0434\u0439\u043e\u043c",
+        "middle_name": "",
+        "photo": "./me_3GTf44J.jpeg",
+        "notes": "",
+        "student_group": 1,
+        "birthday": "2015-09-30",
+        "ticket": "122"
+    },
+    "model": "students.student",
+    "pk": 1
+},
+{
+    "fields": {
+        "notes": "",
+        "leader": 1,
+        "title": "MTM"
+    },
+    "model": "students.group",
+    "pk": 1
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-09-30T16:46:45.987Z",
+        "object_repr": "MTM",
+        "object_id": "1",
+        "change_message": "",
+        "user": [
+            "mero"
+        ],
+        "content_type": [
+            "students",
+            "group"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 1
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-09-30T16:47:02.767Z",
+        "object_repr": "\u0410\u043d\u0442\u043e\u043d\u0456\u043e \u041f\u0430\u0434\u0439\u043e\u043c",
+        "object_id": "1",
+        "change_message": "",
+        "user": [
+            "mero"
+        ],
+        "content_type": [
+            "students",
+            "student"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 2
+},
+{
+    "fields": {
+        "action_flag": 2,
+        "action_time": "2015-09-30T16:47:35.395Z",
+        "object_repr": "MTM (\u0410\u043d\u0442\u043e\u043d\u0456\u043e \u041f\u0430\u0434\u0439\u043e\u043c)",
+        "object_id": "1",
+        "change_message": "Changed leader.",
+        "user": [
+            "mero"
+        ],
+        "content_type": [
+            "students",
+            "group"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 3
+}
+]

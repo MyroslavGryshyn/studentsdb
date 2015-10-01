@@ -10,7 +10,13 @@ class Student(models.Model):
         verbose_name = u"Студент"
         verbose_name_plural = u"Студенти"
         ordering = ['id']
-        
+
+    student_group = models.ForeignKey('Group',
+        verbose_name=u"Група",
+        blank=False,
+        null=True,
+        on_delete=models.PROTECT)
+
     first_name = models.CharField(
         max_length=256,
         blank=False,
