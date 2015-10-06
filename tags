@@ -1,0 +1,155 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ALLOWED_HOSTS	studentsdb/settings.py	/^ALLOWED_HOSTS = []$/;"	v
+BASE_DIR	studentsdb/settings.py	/^BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))$/;"	v
+DATABASES	studentsdb/db.py	/^DATABASES = {$/;"	v
+DEBUG	studentsdb/settings.py	/^DEBUG = True$/;"	v
+Group	students/models/group.py	/^class Group(models.Model):$/;"	c
+INSTALLED_APPS	studentsdb/settings.py	/^INSTALLED_APPS = ($/;"	v
+LANGUAGE_CODE	studentsdb/settings.py	/^LANGUAGE_CODE = 'en-us'$/;"	v
+MEDIA_ROOT	studentsdb/settings.py	/^MEDIA_ROOT = os.path.join(BASE_DIR, '..', 'media')$/;"	v
+MEDIA_URL	studentsdb/settings.py	/^MEDIA_URL = '\/media\/'$/;"	v
+MIDDLEWARE_CLASSES	studentsdb/settings.py	/^MIDDLEWARE_CLASSES = ($/;"	v
+Meta	students/models/group.py	/^    class Meta(object):$/;"	c	class:Group
+Meta	students/models/monthjournal.py	/^    class Meta(object):$/;"	c	class:MonthJournal
+Meta	students/models/student.py	/^    class Meta(object):$/;"	c	class:Student
+Migration	students/migrations/0001_initial.py	/^class Migration(migrations.Migration):$/;"	c
+Migration	students/migrations/0002_monthjournal.py	/^class Migration(migrations.Migration):$/;"	c
+MonthJournal	students/models/monthjournal.py	/^class MonthJournal(models.Model):$/;"	c
+ROOT_URLCONF	studentsdb/settings.py	/^ROOT_URLCONF = 'studentsdb.urls'$/;"	v
+STATIC_URL	studentsdb/settings.py	/^STATIC_URL = '\/static\/'$/;"	v
+Student	students/models/student.py	/^class Student(models.Model):$/;"	c
+TEMPLATES	studentsdb/settings.py	/^TEMPLATES = [$/;"	v
+TEMPLATE_CONTEXT_PROCESSORS	studentsdb/settings.py	/^    global_settings.TEMPLATE_CONTEXT_PROCESSORS + ($/;"	v
+TIME_ZONE	studentsdb/settings.py	/^TIME_ZONE = 'UTC'$/;"	v
+USE_I18N	studentsdb/settings.py	/^USE_I18N = True$/;"	v
+USE_L10N	studentsdb/settings.py	/^USE_L10N = True$/;"	v
+USE_TZ	studentsdb/settings.py	/^USE_TZ = True$/;"	v
+WSGI_APPLICATION	studentsdb/settings.py	/^WSGI_APPLICATION = 'studentsdb.wsgi.application'$/;"	v
+__unicode__	students/models/group.py	/^    def __unicode__(self):$/;"	m	class:Group	file:
+__unicode__	students/models/monthjournal.py	/^    def __unicode__(self):$/;"	m	class:MonthJournal	file:
+__unicode__	students/models/student.py	/^    def __unicode__(self):$/;"	m	class:Student	file:
+application	studentsdb/wsgi.py	/^application = get_wsgi_application()$/;"	v
+birthday	students/models/student.py	/^    birthday = models.DateField($/;"	v	class:Student
+blank	students/models/group.py	/^        blank=False,$/;"	v	class:Group.Meta
+blank	students/models/group.py	/^        blank=True,$/;"	v	class:Group.Meta
+blank	students/models/monthjournal.py	/^        blank=False)$/;"	v	class:MonthJournal.Meta
+blank	students/models/monthjournal.py	/^        blank=False,$/;"	v	class:MonthJournal.Meta
+blank	students/models/student.py	/^        blank=False,$/;"	v	class:Student.Meta
+blank	students/models/student.py	/^        blank=True,$/;"	v	class:Student.Meta
+date	students/models/monthjournal.py	/^    date = models.DateField($/;"	v	class:MonthJournal
+default	students/models/student.py	/^        default='')$/;"	v	class:Student.Meta
+dependencies	students/migrations/0001_initial.py	/^    dependencies = [$/;"	v	class:Migration
+dependencies	students/migrations/0002_monthjournal.py	/^    dependencies = [$/;"	v	class:Migration
+field	students/migrations/0001_initial.py	/^            field=models.OneToOneField(null=True, on_delete=django.db.models.deletion.SET_NULL, blank=True, to='students.Student', verbose_name='\\u0421\\u0442\\u0430\\u0440\\u043e\\u0441\\u0442\\u0430'),$/;"	v	class:Migration
+fields	students/migrations/0001_initial.py	/^            fields=[$/;"	v	class:Migration
+fields	students/migrations/0002_monthjournal.py	/^            fields=[$/;"	v	class:Migration
+first_name	students/models/student.py	/^    first_name = models.CharField($/;"	v	class:Student
+groups_add	students/views/groups.py	/^def groups_add(request):$/;"	f
+groups_delete	students/views/groups.py	/^def groups_delete(request, gid):$/;"	f
+groups_edit	students/views/groups.py	/^def groups_edit(request, gid):$/;"	f
+groups_list	students/views/groups.py	/^def groups_list(request):$/;"	f
+journal	students/views/journal.py	/^def journal(request):$/;"	f
+last_name	students/models/student.py	/^    last_name = models.CharField($/;"	v	class:Student
+leader	students/models/group.py	/^    leader = models.OneToOneField(Student,$/;"	v	class:Group
+load_more	students/static/js/load-page.js	/^function load_more() {$/;"	f
+max_length	students/models/group.py	/^        max_length=256,$/;"	v	class:Group.Meta
+max_length	students/models/student.py	/^        max_length=256,$/;"	v	class:Student.Meta
+middle_name	students/models/student.py	/^    middle_name = models.CharField($/;"	v	class:Student
+model_name	students/migrations/0001_initial.py	/^            model_name='group',$/;"	v	class:Migration
+name	students/migrations/0001_initial.py	/^            name='Group',$/;"	v	class:Migration
+name	students/migrations/0001_initial.py	/^            name='Student',$/;"	v	class:Migration
+name	students/migrations/0001_initial.py	/^            name='leader',$/;"	v	class:Migration
+name	students/migrations/0002_monthjournal.py	/^            name='MonthJournal',$/;"	v	class:Migration
+name	studentsdb/urls.py	/^        name='groups'),$/;"	v
+name	studentsdb/urls.py	/^        name='groups_add'),$/;"	v
+name	studentsdb/urls.py	/^        name='groups_delete'),$/;"	v
+name	studentsdb/urls.py	/^        name='groups_edit'),$/;"	v
+name	studentsdb/urls.py	/^        name='journal'),$/;"	v
+name	studentsdb/urls.py	/^        name='students_add'),$/;"	v
+name	studentsdb/urls.py	/^        name='students_edit'),$/;"	v
+notes	students/models/group.py	/^    notes = models.TextField($/;"	v	class:Group
+notes	students/models/student.py	/^    notes = models.TextField($/;"	v	class:Student
+null	students/models/group.py	/^        null=True,$/;"	v	class:Group.Meta
+null	students/models/student.py	/^        null=True)$/;"	v	class:Student.Meta
+null	students/models/student.py	/^        null=True,$/;"	v	class:Student.Meta
+on_delete	students/models/group.py	/^        on_delete=models.SET_NULL)$/;"	v	class:Group.Meta
+on_delete	students/models/student.py	/^        on_delete=models.PROTECT)$/;"	v	class:Student.Meta
+operations	students/migrations/0001_initial.py	/^    operations = [$/;"	v	class:Migration
+operations	students/migrations/0002_monthjournal.py	/^    operations = [$/;"	v	class:Migration
+options	students/migrations/0001_initial.py	/^            options={$/;"	v	class:Migration
+options	students/migrations/0002_monthjournal.py	/^            options={$/;"	v	class:Migration
+ordering	students/models/student.py	/^        ordering = ['id']$/;"	v	class:Student.Meta
+photo	students/models/student.py	/^    photo = models.ImageField($/;"	v	class:Student
+present_day1	students/models/monthjournal.py	/^    present_day1 = models.BooleanField(default=False)$/;"	v	class:MonthJournal
+present_day10	students/models/monthjournal.py	/^    present_day10 = models.BooleanField(default=False)$/;"	v	class:MonthJournal
+present_day11	students/models/monthjournal.py	/^    present_day11 = models.BooleanField(default=False)$/;"	v	class:MonthJournal
+present_day12	students/models/monthjournal.py	/^    present_day12 = models.BooleanField(default=False)$/;"	v	class:MonthJournal
+present_day13	students/models/monthjournal.py	/^    present_day13 = models.BooleanField(default=False)$/;"	v	class:MonthJournal
+present_day14	students/models/monthjournal.py	/^    present_day14 = models.BooleanField(default=False)$/;"	v	class:MonthJournal
+present_day15	students/models/monthjournal.py	/^    present_day15 = models.BooleanField(default=False)$/;"	v	class:MonthJournal
+present_day16	students/models/monthjournal.py	/^    present_day16 = models.BooleanField(default=False)$/;"	v	class:MonthJournal
+present_day17	students/models/monthjournal.py	/^    present_day17 = models.BooleanField(default=False)$/;"	v	class:MonthJournal
+present_day18	students/models/monthjournal.py	/^    present_day18 = models.BooleanField(default=False)$/;"	v	class:MonthJournal
+present_day19	students/models/monthjournal.py	/^    present_day19 = models.BooleanField(default=False)$/;"	v	class:MonthJournal
+present_day2	students/models/monthjournal.py	/^    present_day2 = models.BooleanField(default=False)$/;"	v	class:MonthJournal
+present_day20	students/models/monthjournal.py	/^    present_day20 = models.BooleanField(default=False)$/;"	v	class:MonthJournal
+present_day21	students/models/monthjournal.py	/^    present_day21 = models.BooleanField(default=False)$/;"	v	class:MonthJournal
+present_day22	students/models/monthjournal.py	/^    present_day22 = models.BooleanField(default=False)$/;"	v	class:MonthJournal
+present_day23	students/models/monthjournal.py	/^    present_day23 = models.BooleanField(default=False)$/;"	v	class:MonthJournal
+present_day24	students/models/monthjournal.py	/^    present_day24 = models.BooleanField(default=False)$/;"	v	class:MonthJournal
+present_day25	students/models/monthjournal.py	/^    present_day25 = models.BooleanField(default=False)$/;"	v	class:MonthJournal
+present_day26	students/models/monthjournal.py	/^    present_day26 = models.BooleanField(default=False)$/;"	v	class:MonthJournal
+present_day27	students/models/monthjournal.py	/^    present_day27 = models.BooleanField(default=False)$/;"	v	class:MonthJournal
+present_day28	students/models/monthjournal.py	/^    present_day28 = models.BooleanField(default=False)$/;"	v	class:MonthJournal
+present_day29	students/models/monthjournal.py	/^    present_day29 = models.BooleanField(default=False)$/;"	v	class:MonthJournal
+present_day3	students/models/monthjournal.py	/^    present_day3 = models.BooleanField(default=False)$/;"	v	class:MonthJournal
+present_day30	students/models/monthjournal.py	/^    present_day30 = models.BooleanField(default=False)$/;"	v	class:MonthJournal
+present_day31	students/models/monthjournal.py	/^    present_day31 = models.BooleanField(default=False)$/;"	v	class:MonthJournal
+present_day4	students/models/monthjournal.py	/^    present_day4 = models.BooleanField(default=False)$/;"	v	class:MonthJournal
+present_day5	students/models/monthjournal.py	/^    present_day5 = models.BooleanField(default=False)$/;"	v	class:MonthJournal
+present_day6	students/models/monthjournal.py	/^    present_day6 = models.BooleanField(default=False)$/;"	v	class:MonthJournal
+present_day7	students/models/monthjournal.py	/^    present_day7 = models.BooleanField(default=False)$/;"	v	class:MonthJournal
+present_day8	students/models/monthjournal.py	/^    present_day8 = models.BooleanField(default=False)$/;"	v	class:MonthJournal
+present_day9	students/models/monthjournal.py	/^    present_day9 = models.BooleanField(default=False)$/;"	v	class:MonthJournal
+project_opened	.ropeproject/config.py	/^def project_opened(project):$/;"	f
+project_opened	students/.ropeproject/config.py	/^def project_opened(project):$/;"	f
+project_opened	studentsdb/.ropeproject/config.py	/^def project_opened(project):$/;"	f
+set_prefs	.ropeproject/config.py	/^def set_prefs(prefs):$/;"	f
+set_prefs	students/.ropeproject/config.py	/^def set_prefs(prefs):$/;"	f
+set_prefs	studentsdb/.ropeproject/config.py	/^def set_prefs(prefs):$/;"	f
+student	students/models/monthjournal.py	/^    student = models.ForeignKey('Student',$/;"	v	class:MonthJournal
+student_group	students/models/student.py	/^    student_group = models.ForeignKey('Group',$/;"	v	class:Student
+students_add	students/views/students.py	/^def students_add(request):$/;"	f
+students_delete	students/views/students.py	/^def students_delete(request, sid):$/;"	f
+students_edit	students/views/students.py	/^def students_edit(request, sid):$/;"	f
+students_list	students/views/students.py	/^def students_list(request):$/;"	f
+students_proc	studentsdb/context_processors.py	/^def students_proc(request):$/;"	f
+ticket	students/models/student.py	/^    ticket = models.CharField($/;"	v	class:Student
+title	students/models/group.py	/^    title = models.CharField($/;"	v	class:Group
+unique_for_month	students/models/monthjournal.py	/^        unique_for_month='date')$/;"	v	class:MonthJournal.Meta
+urlpatterns	studentsdb/urls.py	/^urlpatterns = patterns('',$/;"	v
+verbose_name	students/models/group.py	/^        verbose_name = u"Група"$/;"	v	class:Group.Meta
+verbose_name	students/models/group.py	/^        verbose_name=u"Додаткові нотатки")$/;"	v	class:Group.Meta
+verbose_name	students/models/group.py	/^        verbose_name=u"Назва")$/;"	v	class:Group.Meta
+verbose_name	students/models/group.py	/^        verbose_name=u"Староста",$/;"	v	class:Group.Meta
+verbose_name	students/models/monthjournal.py	/^        verbose_name = u"Місячний журнал"$/;"	v	class:MonthJournal.Meta
+verbose_name	students/models/monthjournal.py	/^        verbose_name=u"Студент",$/;"	v	class:MonthJournal.Meta
+verbose_name	students/models/monthjournal.py	/^        verbose_name=u'Дата',$/;"	v	class:MonthJournal.Meta
+verbose_name	students/models/monthjournal.py	/^        verbose_name=u'Студент',$/;"	v	class:MonthJournal.Meta
+verbose_name	students/models/student.py	/^        verbose_name = u"Студент"$/;"	v	class:Student.Meta
+verbose_name	students/models/student.py	/^        verbose_name=u"Ім'я")$/;"	v	class:Student.Meta
+verbose_name	students/models/student.py	/^        verbose_name=u"Білет")$/;"	v	class:Student.Meta
+verbose_name	students/models/student.py	/^        verbose_name=u"Група",$/;"	v	class:Student.Meta
+verbose_name	students/models/student.py	/^        verbose_name=u"Дата народження",$/;"	v	class:Student.Meta
+verbose_name	students/models/student.py	/^        verbose_name=u"Додаткові нотатки")$/;"	v	class:Student.Meta
+verbose_name	students/models/student.py	/^        verbose_name=u"По-батькові",$/;"	v	class:Student.Meta
+verbose_name	students/models/student.py	/^        verbose_name=u"Прізвище")$/;"	v	class:Student.Meta
+verbose_name	students/models/student.py	/^        verbose_name=u"Фото",$/;"	v	class:Student.Meta
+verbose_name_plural	students/models/group.py	/^        verbose_name_plural = u"Групи"$/;"	v	class:Group.Meta
+verbose_name_plural	students/models/monthjournal.py	/^        verbose_name_plural = u"Місячний журнал"$/;"	v	class:MonthJournal.Meta
+verbose_name_plural	students/models/student.py	/^        verbose_name_plural = u"Студенти"$/;"	v	class:Student.Meta

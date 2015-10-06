@@ -1,0 +1,6 @@
+€}q(Ustudents.models]U
+studentsdb]Ustudentsdb.wsgi]qUapplicationqaUstudents.tests]Ustudents]Ustudentsdb.urls]qUurlpatternsqaUmanage]Ustudents.admin]Ustudentsdb.settings]q(U	TEMPLATESqUUSE_L10NqUTEMPLATE_CONTEXT_PROCESSORSq	ULANGUAGE_CODEq
+UUSE_TZqUUSE_I18NqU	DATABASESqU	TIME_ZONEqU
+STATIC_URLqUROOT_URLCONFqUWSGI_APPLICATIONqUMIDDLEWARE_CLASSESqUDEBUGqUALLOWED_HOSTSqU
+SECRET_KEYqUINSTALLED_APPSqUBASE_DIRqeUstudents.migrations]Ustudents.views]q(Ugroups_editqUgroups_deleteqUstudents_listqUgroups_listqU
+groups_addqUstudents_deleteqUstudents_addqUstudents_editq eu.
