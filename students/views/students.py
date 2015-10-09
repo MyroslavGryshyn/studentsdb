@@ -7,6 +7,8 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from ..models import Student, Group
 
 import imghdr
+from datetime import datetime
+from django.contrib import messages
 
 # Views for Students
 
@@ -103,27 +105,33 @@ def students_add(request):
             if not errors:
                 student = Student(**data)
                 student.save()
+                #Adding message for succesful login
+                messages.add_message(
+                    request, messages.SUCCESS, 
+                    'Студент {} {} успішно доданий!'.
+                    format(first_name, last_name))
 
                 # redirect to students list
-                return HttpResponseRedirect(
-                    u'%s?status_message=Студента успішно додано!' %
-                    reverse('home'))
+                return HttpResponseRedirect(reverse('home'))
             else:
                 # render form with errors and previous user input
+                messages.add_message(
+                    request, messages.ERROR, 
+                    'Будь ласка, виправте помилки!')
                 return render(request, 'students/students_add.html',
                     {'groups': Group.objects.all().order_by('title'),
                      'errors': errors})
 
         elif request.POST.get('cancel_button') is not None:
             # redirect to home page on cancel button
-            return HttpResponseRedirect(
-                u'%s?status_message=Додавання студента скасовано!' %
-                reverse('home'))
+            messages.add_message(
+                    request, messages.ERROR, 
+                    'Додавання студента було скасовано')
+            return HttpResponseRedirect(reverse('home'))
     else:
         # initial form render
         return render(request, 'students/students_add.html',
             {'groups': Group.objects.all().order_by('title')})
-
 
 def students_edit(request, sid):
     return HttpResponse('<h1>Edit Student %s</h1>' % sid)

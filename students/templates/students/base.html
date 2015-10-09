@@ -59,10 +59,17 @@
   <!-- End subheader -->
   <!-- Start Content Columns -->
   <div class="row" id="content-columns">
-    <div class="col-xs-12" id="content-column">
-      {% comment "Not used alert so far" %}
-        <div class="alert alert-warning" role="alert">Status Update!</div>
-      {% endcomment %}
+    <div class="col-xs-12" id="content-column"> 
+
+      {% block status_message %}
+        {% for message in messages %}
+          <div{% if message.tags %} class="alert alert-{{ message.tags }} 
+            {% if message.tags = 'error' %}alert-danger{%endif%}"{% endif %}>
+          {{ message|safe }}
+          </div>
+        {% endfor %}
+      {% endblock %}
+
       <h2>{% block title %}{% endblock title %}</h2>
       {% block content %}{% endblock content %}
     </div>
