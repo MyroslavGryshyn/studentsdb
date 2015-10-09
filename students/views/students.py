@@ -106,18 +106,16 @@ def students_add(request):
                 student = Student(**data)
                 student.save()
                 #Adding message for succesful login
-                messages.add_message(
-                    request, messages.SUCCESS, 
-                    'Студент {} {} успішно доданий!'.
+                messages.success(
+                    request, 'Студент {} {} успішно доданий!'.
                     format(first_name, last_name))
 
                 # redirect to students list
                 return HttpResponseRedirect(reverse('home'))
             else:
                 # render form with errors and previous user input
-                messages.add_message(
-                    request, messages.ERROR, 
-                    'Будь ласка, виправте помилки!')
+                messages.error(
+                    request, 'Будь ласка, виправте помилки!')
                 return render(request, 'students/students_add.html',
                     {'groups': Group.objects.all().order_by('title'),
                      'errors': errors})
