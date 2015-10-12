@@ -4,13 +4,22 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ADMIN_EMAIL	studentsdb/settings.py	/^ADMIN_EMAIL = 'sergiy.1911@gmail.com'$/;"	v
 ALLOWED_HOSTS	studentsdb/settings.py	/^ALLOWED_HOSTS = []$/;"	v
 BASE_DIR	studentsdb/settings.py	/^BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))$/;"	v
+CRISPY_TEMPLATE_PACK	studentsdb/settings.py	/^CRISPY_TEMPLATE_PACK = 'bootstrap3'$/;"	v
+ContactForm	students/views/contact_admin.py	/^class ContactForm(forms.Form):$/;"	c
 DATABASES	studentsdb/db.py	/^DATABASES = {$/;"	v
 DEBUG	studentsdb/settings.py	/^DEBUG = True$/;"	v
+EMAIL_HOST	studentsdb/settings.py	/^EMAIL_HOST = 'smtp.mandrillapp.com'$/;"	v
+EMAIL_HOST_PASSWORD	studentsdb/settings.py	/^EMAIL_HOST_PASSWORD = 'm81NjVMs5I8bSbkl_9RbDQ'$/;"	v
+EMAIL_HOST_USER	studentsdb/settings.py	/^EMAIL_HOST_USER = 'admin@fayna-chayna.com.ua'$/;"	v
+EMAIL_PORT	studentsdb/settings.py	/^EMAIL_PORT = '587'$/;"	v
+EMAIL_USE_SSL	studentsdb/settings.py	/^EMAIL_USE_SSL = False$/;"	v
+EMAIL_USE_TLS	studentsdb/settings.py	/^EMAIL_USE_TLS = True$/;"	v
 Group	students/models/group.py	/^class Group(models.Model):$/;"	c
 INSTALLED_APPS	studentsdb/settings.py	/^INSTALLED_APPS = ($/;"	v
-LANGUAGE_CODE	studentsdb/settings.py	/^LANGUAGE_CODE = 'en-us'$/;"	v
+LANGUAGE_CODE	studentsdb/settings.py	/^LANGUAGE_CODE = 'uk'$/;"	v
 MEDIA_ROOT	studentsdb/settings.py	/^MEDIA_ROOT = os.path.join(BASE_DIR, '..', 'media')$/;"	v
 MEDIA_URL	studentsdb/settings.py	/^MEDIA_URL = '\/media\/'$/;"	v
 MIDDLEWARE_CLASSES	studentsdb/settings.py	/^MIDDLEWARE_CLASSES = ($/;"	v
@@ -30,6 +39,7 @@ USE_I18N	studentsdb/settings.py	/^USE_I18N = True$/;"	v
 USE_L10N	studentsdb/settings.py	/^USE_L10N = True$/;"	v
 USE_TZ	studentsdb/settings.py	/^USE_TZ = True$/;"	v
 WSGI_APPLICATION	studentsdb/settings.py	/^WSGI_APPLICATION = 'studentsdb.wsgi.application'$/;"	v
+__init__	students/views/contact_admin.py	/^    def __init__(self, *args, **kwargs):$/;"	m	class:ContactForm
 __unicode__	students/models/group.py	/^    def __unicode__(self):$/;"	m	class:Group	file:
 __unicode__	students/models/monthjournal.py	/^    def __unicode__(self):$/;"	m	class:MonthJournal	file:
 __unicode__	students/models/student.py	/^    def __unicode__(self):$/;"	m	class:Student	file:
@@ -41,6 +51,7 @@ blank	students/models/monthjournal.py	/^        blank=False)$/;"	v	class:MonthJo
 blank	students/models/monthjournal.py	/^        blank=False,$/;"	v	class:MonthJournal.Meta
 blank	students/models/student.py	/^        blank=False,$/;"	v	class:Student.Meta
 blank	students/models/student.py	/^        blank=True,$/;"	v	class:Student.Meta
+contact_admin	students/views/contact_admin.py	/^def contact_admin(request):$/;"	f
 date	students/models/monthjournal.py	/^    date = models.DateField($/;"	v	class:MonthJournal
 default	students/models/student.py	/^        default='')$/;"	v	class:Student.Meta
 dependencies	students/migrations/0001_initial.py	/^    dependencies = [$/;"	v	class:Migration
@@ -49,6 +60,7 @@ field	students/migrations/0001_initial.py	/^            field=models.OneToOneFie
 fields	students/migrations/0001_initial.py	/^            fields=[$/;"	v	class:Migration
 fields	students/migrations/0002_monthjournal.py	/^            fields=[$/;"	v	class:Migration
 first_name	students/models/student.py	/^    first_name = models.CharField($/;"	v	class:Student
+from_email	students/views/contact_admin.py	/^    from_email = forms.EmailField($/;"	v	class:ContactForm
 groups_add	students/views/groups.py	/^def groups_add(request):$/;"	f
 groups_delete	students/views/groups.py	/^def groups_delete(request, gid):$/;"	f
 groups_edit	students/views/groups.py	/^def groups_edit(request, gid):$/;"	f
@@ -59,12 +71,14 @@ leader	students/models/group.py	/^    leader = models.OneToOneField(Student,$/;"
 load_more	students/static/js/load-page.js	/^function load_more() {$/;"	f
 max_length	students/models/group.py	/^        max_length=256,$/;"	v	class:Group.Meta
 max_length	students/models/student.py	/^        max_length=256,$/;"	v	class:Student.Meta
+message	students/views/contact_admin.py	/^    message = forms.CharField($/;"	v	class:ContactForm
 middle_name	students/models/student.py	/^    middle_name = models.CharField($/;"	v	class:Student
 model_name	students/migrations/0001_initial.py	/^            model_name='group',$/;"	v	class:Migration
 name	students/migrations/0001_initial.py	/^            name='Group',$/;"	v	class:Migration
 name	students/migrations/0001_initial.py	/^            name='Student',$/;"	v	class:Migration
 name	students/migrations/0001_initial.py	/^            name='leader',$/;"	v	class:Migration
 name	students/migrations/0002_monthjournal.py	/^            name='MonthJournal',$/;"	v	class:Migration
+name	studentsdb/urls.py	/^        name='contact_admin'),$/;"	v
 name	studentsdb/urls.py	/^        name='groups'),$/;"	v
 name	studentsdb/urls.py	/^        name='groups_add'),$/;"	v
 name	studentsdb/urls.py	/^        name='groups_delete'),$/;"	v
@@ -129,6 +143,7 @@ students_delete	students/views/students.py	/^def students_delete(request, sid):$
 students_edit	students/views/students.py	/^def students_edit(request, sid):$/;"	f
 students_list	students/views/students.py	/^def students_list(request):$/;"	f
 students_proc	studentsdb/context_processors.py	/^def students_proc(request):$/;"	f
+subject	students/views/contact_admin.py	/^    subject = forms.CharField($/;"	v	class:ContactForm
 ticket	students/models/student.py	/^    ticket = models.CharField($/;"	v	class:Student
 title	students/models/group.py	/^    title = models.CharField($/;"	v	class:Group
 unique_for_month	students/models/monthjournal.py	/^        unique_for_month='date')$/;"	v	class:MonthJournal.Meta

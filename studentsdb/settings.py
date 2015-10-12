@@ -38,6 +38,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'crispy_forms',
     'students',
 )
 
@@ -79,7 +80,7 @@ WSGI_APPLICATION = 'studentsdb.wsgi.application'
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'uk'
 
 TIME_ZONE = 'UTC'
 
@@ -103,3 +104,17 @@ TEMPLATE_CONTEXT_PROCESSORS = \
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, '..', 'media')
+
+# email settings
+# please, set here you smtp server details and your admin email
+
+ADMIN_EMAIL = 'sergiy.1911@gmail.com'
+EMAIL_HOST = 'smtp.mandrillapp.com'
+EMAIL_PORT = '587'
+EMAIL_HOST_USER = 'admin@fayna-chayna.com.ua'
+EMAIL_HOST_PASSWORD = 'm81NjVMs5I8bSbkl_9RbDQ'
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
+
+
+CRISPY_TEMPLATE_PACK = 'bootstrap3'
