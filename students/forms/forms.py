@@ -15,6 +15,12 @@ from django.contrib import messages
 
 from django.core.mail import send_mail
 
+from crispy_forms.helper import FormHelper
+from crispy_forms.layout import Submit
+from crispy_forms.bootstrap import FormActions
+from django.forms import ModelForm
+from ..models import Student
+
 class ContactAdmin(ContactForm):
 
     # style for form
@@ -76,5 +82,33 @@ class ContactAdmin(ContactForm):
 
         else:
             messages.success(self.request, success_message)
-    
+
+class StudentUpdateForm(ModelForm):
+    class Meta:
+        model = Student
+        fields = '__all__'
+
+    def __init__(self, *args, **kwargs):
+        super(StudentUpdateForm, self).__init__(*args, **kwargs)
+
+        self.helper = FormHelper(self)
+
+        # set form tag attributes
+        self.helper.form_action = reverse('students_edit',
+            kwargs={'pk': kwargs['instance'].id})
+        self.helper.form_method = 'POST'
+        self.helper.form_class = 'form-horizontal'
+
+        # set form field properties
+        self.helper.help_text_inline = False
+        self.helper.html5_required = True
+        self.helper.label_class = 'col-sm-2 control-label'
+        self.helper.field_class = 'col-sm-10'
+
+        # add buttons
+        self.helper.layout[-1] = FormActions(
+            Submit('add_button', u'Зберегти', css_class="btn btn-pri mary"),
+            Submit('cancel_button', u'Скасувати', css_class="btn btn -link"),
+        )
+
 

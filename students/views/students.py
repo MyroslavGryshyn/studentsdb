@@ -1,14 +1,35 @@
 # -*- coding: utf-8 -*-
+from datetime import datetime
 
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from django.core.urlresolvers import reverse
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-from ..models import Student, Group
-
+from django.views.generic import UpdateView
 import imghdr
-from datetime import datetime
 from django.contrib import messages
+
+from ..models import Student, Group
+from ..forms.forms import StudentUpdateForm
+
+
+#Class based views for Students
+class StudentUpdateView(UpdateView):
+    model = Student
+    template_name = 'students/students_edit.html'
+    form_class = StudentUpdateForm
+
+    def get_success_url(self):
+        return reverse('home')
+
+    def post(self, request, *args, **kwargs):
+        if request.POST.get('cancel_button'):
+            messages.error(request, u'Ви відмінили редагування студента')
+            return HttpResponseRedirect(reverse('home'))
+        else:
+            messages.success(request, u'Студента успішно збережено!')
+            return super(StudentUpdateView, self).post(request, *args, **kwargs)
+
 
 # Views for Students
 
@@ -94,7 +115,7 @@ def students_add(request):
             photo = request.FILES.get('photo')
             if not photo:
                 errors['photo'] = u"Фото - обов\'язкове"
-            elif(imghdr.what(photo)):
+            elif imghdr.what(photo):
                 #If photo is valid we proceed
                 data['photo'] = photo
             else:
@@ -123,7 +144,7 @@ def students_add(request):
         elif request.POST.get('cancel_button') is not None:
             # redirect to home page on cancel button
             messages.add_message(
-                    request, messages.ERROR, 
+                    request, messages.ERROR,
                     'Додавання студента було скасовано')
             return HttpResponseRedirect(reverse('home'))
     else:
@@ -131,8 +152,8 @@ def students_add(request):
         return render(request, 'students/students_add.html',
             {'groups': Group.objects.all().order_by('title')})
 
-def students_edit(request, sid):
-    return HttpResponse('<h1>Edit Student %s</h1>' % sid)
+#def students_edit(request, sid):
+#    return HttpResponse('<h1>Edit Student %s</h1>' % sid)
 
 def students_delete(request, sid):
     return HttpResponse('<h1>Delete Student %s</h1>' % sid)
