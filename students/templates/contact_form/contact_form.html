@@ -1,0 +1,16 @@
+{% extends "students/base.html" %}
+{% load crispy_forms_tags %}
+
+{% block meta_title %}Напишіть нам{% endblock meta_title %}
+
+{% block title %}Напишіть нам{% endblock title %}
+
+{% block content %}
+
+  {% crispy form %}
+
+{% endblock %}
+
+{% block footer %}
+  &copy; 2015 Сервіс Обліку Студентів
+{% endblock footer %}

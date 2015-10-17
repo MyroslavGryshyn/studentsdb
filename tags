@@ -4,13 +4,16 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ADMINS	studentsdb/settings.py	/^ADMINS = ADMIN_EMAIL$/;"	v
 ADMIN_EMAIL	studentsdb/settings.py	/^ADMIN_EMAIL = 'sergiy.1911@gmail.com'$/;"	v
 ALLOWED_HOSTS	studentsdb/settings.py	/^ALLOWED_HOSTS = []$/;"	v
 BASE_DIR	studentsdb/settings.py	/^BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))$/;"	v
 CRISPY_TEMPLATE_PACK	studentsdb/settings.py	/^CRISPY_TEMPLATE_PACK = 'bootstrap3'$/;"	v
-ContactForm	students/views/contact_admin.py	/^class ContactForm(forms.Form):$/;"	c
+ContactAdmin	students/forms/forms.py	/^class ContactAdmin(ContactForm):$/;"	c
+ContactAdminView	students/views/contact_admin.py	/^class ContactAdminView(ContactFormView):$/;"	c
 DATABASES	studentsdb/db.py	/^DATABASES = {$/;"	v
 DEBUG	studentsdb/settings.py	/^DEBUG = True$/;"	v
+DEFAULT_FROM_EMAIL	studentsdb/settings.py	/^DEFAULT_FROM_EMAIL = 'mero@mail.com'$/;"	v
 EMAIL_HOST	studentsdb/settings.py	/^EMAIL_HOST = 'smtp.mandrillapp.com'$/;"	v
 EMAIL_HOST_PASSWORD	studentsdb/settings.py	/^EMAIL_HOST_PASSWORD = 'm81NjVMs5I8bSbkl_9RbDQ'$/;"	v
 EMAIL_HOST_USER	studentsdb/settings.py	/^EMAIL_HOST_USER = 'admin@fayna-chayna.com.ua'$/;"	v
@@ -20,6 +23,7 @@ EMAIL_USE_TLS	studentsdb/settings.py	/^EMAIL_USE_TLS = True$/;"	v
 Group	students/models/group.py	/^class Group(models.Model):$/;"	c
 INSTALLED_APPS	studentsdb/settings.py	/^INSTALLED_APPS = ($/;"	v
 LANGUAGE_CODE	studentsdb/settings.py	/^LANGUAGE_CODE = 'uk'$/;"	v
+MANAGERS	studentsdb/settings.py	/^MANAGERS = ($/;"	v
 MEDIA_ROOT	studentsdb/settings.py	/^MEDIA_ROOT = os.path.join(BASE_DIR, '..', 'media')$/;"	v
 MEDIA_URL	studentsdb/settings.py	/^MEDIA_URL = '\/media\/'$/;"	v
 MIDDLEWARE_CLASSES	studentsdb/settings.py	/^MIDDLEWARE_CLASSES = ($/;"	v
@@ -32,6 +36,7 @@ MonthJournal	students/models/monthjournal.py	/^class MonthJournal(models.Model):
 ROOT_URLCONF	studentsdb/settings.py	/^ROOT_URLCONF = 'studentsdb.urls'$/;"	v
 STATIC_URL	studentsdb/settings.py	/^STATIC_URL = '\/static\/'$/;"	v
 Student	students/models/student.py	/^class Student(models.Model):$/;"	c
+SuccessSentView	students/views/contact_admin.py	/^class SuccessSentView(TemplateView):$/;"	c
 TEMPLATES	studentsdb/settings.py	/^TEMPLATES = [$/;"	v
 TEMPLATE_CONTEXT_PROCESSORS	studentsdb/settings.py	/^    global_settings.TEMPLATE_CONTEXT_PROCESSORS + ($/;"	v
 TIME_ZONE	studentsdb/settings.py	/^TIME_ZONE = 'UTC'$/;"	v
@@ -39,7 +44,7 @@ USE_I18N	studentsdb/settings.py	/^USE_I18N = True$/;"	v
 USE_L10N	studentsdb/settings.py	/^USE_L10N = True$/;"	v
 USE_TZ	studentsdb/settings.py	/^USE_TZ = True$/;"	v
 WSGI_APPLICATION	studentsdb/settings.py	/^WSGI_APPLICATION = 'studentsdb.wsgi.application'$/;"	v
-__init__	students/views/contact_admin.py	/^    def __init__(self, *args, **kwargs):$/;"	m	class:ContactForm
+__init__	students/forms/forms.py	/^    def __init__(self, request=None, *args, **kwargs):$/;"	m	class:ContactAdmin
 __unicode__	students/models/group.py	/^    def __unicode__(self):$/;"	m	class:Group	file:
 __unicode__	students/models/monthjournal.py	/^    def __unicode__(self):$/;"	m	class:MonthJournal	file:
 __unicode__	students/models/student.py	/^    def __unicode__(self):$/;"	m	class:Student	file:
@@ -51,16 +56,18 @@ blank	students/models/monthjournal.py	/^        blank=False)$/;"	v	class:MonthJo
 blank	students/models/monthjournal.py	/^        blank=False,$/;"	v	class:MonthJournal.Meta
 blank	students/models/student.py	/^        blank=False,$/;"	v	class:Student.Meta
 blank	students/models/student.py	/^        blank=True,$/;"	v	class:Student.Meta
-contact_admin	students/views/contact_admin.py	/^def contact_admin(request):$/;"	f
+body	students/forms/forms.py	/^    body = forms.CharField($/;"	v	class:ContactAdmin
 date	students/models/monthjournal.py	/^    date = models.DateField($/;"	v	class:MonthJournal
 default	students/models/student.py	/^        default='')$/;"	v	class:Student.Meta
 dependencies	students/migrations/0001_initial.py	/^    dependencies = [$/;"	v	class:Migration
 dependencies	students/migrations/0002_monthjournal.py	/^    dependencies = [$/;"	v	class:Migration
+email	students/forms/forms.py	/^    email = forms.EmailField($/;"	v	class:ContactAdmin
 field	students/migrations/0001_initial.py	/^            field=models.OneToOneField(null=True, on_delete=django.db.models.deletion.SET_NULL, blank=True, to='students.Student', verbose_name='\\u0421\\u0442\\u0430\\u0440\\u043e\\u0441\\u0442\\u0430'),$/;"	v	class:Migration
 fields	students/migrations/0001_initial.py	/^            fields=[$/;"	v	class:Migration
 fields	students/migrations/0002_monthjournal.py	/^            fields=[$/;"	v	class:Migration
 first_name	students/models/student.py	/^    first_name = models.CharField($/;"	v	class:Student
-from_email	students/views/contact_admin.py	/^    from_email = forms.EmailField($/;"	v	class:ContactForm
+form_class	students/views/contact_admin.py	/^    form_class = ContactAdmin$/;"	v	class:ContactAdminView
+get_success_url	students/views/contact_admin.py	/^    def get_success_url(self):$/;"	m	class:ContactAdminView
 groups_add	students/views/groups.py	/^def groups_add(request):$/;"	f
 groups_delete	students/views/groups.py	/^def groups_delete(request, gid):$/;"	f
 groups_edit	students/views/groups.py	/^def groups_edit(request, gid):$/;"	f
@@ -71,14 +78,13 @@ leader	students/models/group.py	/^    leader = models.OneToOneField(Student,$/;"
 load_more	students/static/js/load-page.js	/^function load_more() {$/;"	f
 max_length	students/models/group.py	/^        max_length=256,$/;"	v	class:Group.Meta
 max_length	students/models/student.py	/^        max_length=256,$/;"	v	class:Student.Meta
-message	students/views/contact_admin.py	/^    message = forms.CharField($/;"	v	class:ContactForm
 middle_name	students/models/student.py	/^    middle_name = models.CharField($/;"	v	class:Student
 model_name	students/migrations/0001_initial.py	/^            model_name='group',$/;"	v	class:Migration
 name	students/migrations/0001_initial.py	/^            name='Group',$/;"	v	class:Migration
 name	students/migrations/0001_initial.py	/^            name='Student',$/;"	v	class:Migration
 name	students/migrations/0001_initial.py	/^            name='leader',$/;"	v	class:Migration
 name	students/migrations/0002_monthjournal.py	/^            name='MonthJournal',$/;"	v	class:Migration
-name	studentsdb/urls.py	/^        name='contact_admin'),$/;"	v
+name	studentsdb/urls.py	/^        name='contact_admin_sent'),$/;"	v
 name	studentsdb/urls.py	/^        name='groups'),$/;"	v
 name	studentsdb/urls.py	/^        name='groups_add'),$/;"	v
 name	studentsdb/urls.py	/^        name='groups_delete'),$/;"	v
@@ -133,6 +139,7 @@ present_day9	students/models/monthjournal.py	/^    present_day9 = models.Boolean
 project_opened	.ropeproject/config.py	/^def project_opened(project):$/;"	f
 project_opened	students/.ropeproject/config.py	/^def project_opened(project):$/;"	f
 project_opened	studentsdb/.ropeproject/config.py	/^def project_opened(project):$/;"	f
+save	students/forms/forms.py	/^    def save(self, fail_silently=False):$/;"	m	class:ContactAdmin
 set_prefs	.ropeproject/config.py	/^def set_prefs(prefs):$/;"	f
 set_prefs	students/.ropeproject/config.py	/^def set_prefs(prefs):$/;"	f
 set_prefs	studentsdb/.ropeproject/config.py	/^def set_prefs(prefs):$/;"	f
@@ -143,7 +150,8 @@ students_delete	students/views/students.py	/^def students_delete(request, sid):$
 students_edit	students/views/students.py	/^def students_edit(request, sid):$/;"	f
 students_list	students/views/students.py	/^def students_list(request):$/;"	f
 students_proc	studentsdb/context_processors.py	/^def students_proc(request):$/;"	f
-subject	students/views/contact_admin.py	/^    subject = forms.CharField($/;"	v	class:ContactForm
+subject	students/forms/forms.py	/^    subject = forms.CharField($/;"	v	class:ContactAdmin
+template_name	students/views/contact_admin.py	/^    template_name = 'contact_form\/contact_admin_sent.html'$/;"	v	class:SuccessSentView
 ticket	students/models/student.py	/^    ticket = models.CharField($/;"	v	class:Student
 title	students/models/group.py	/^    title = models.CharField($/;"	v	class:Group
 unique_for_month	students/models/monthjournal.py	/^        unique_for_month='date')$/;"	v	class:MonthJournal.Meta

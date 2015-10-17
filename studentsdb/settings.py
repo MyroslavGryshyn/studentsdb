@@ -39,7 +39,9 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'crispy_forms',
+    'captcha',
     'students',
+    'contact_form',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -109,6 +111,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, '..', 'media')
 # please, set here you smtp server details and your admin email
 
 ADMIN_EMAIL = 'sergiy.1911@gmail.com'
+ADMINS = ADMIN_EMAIL
 EMAIL_HOST = 'smtp.mandrillapp.com'
 EMAIL_PORT = '587'
 EMAIL_HOST_USER = 'admin@fayna-chayna.com.ua'
@@ -116,5 +119,10 @@ EMAIL_HOST_PASSWORD = 'm81NjVMs5I8bSbkl_9RbDQ'
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
 
+MANAGERS = (
+    ('Manager_email', ADMIN_EMAIL),   
+)
+DEFAULT_FROM_EMAIL = 'mero@mail.com'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
+

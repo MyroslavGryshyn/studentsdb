@@ -19,6 +19,8 @@ from django.contrib import admin
 
 from .settings import MEDIA_ROOT, DEBUG
 
+from students.views.contact_admin import ContactAdminView, SuccessSentView
+
 urlpatterns = patterns('',
     # Students urls
     url(r'^$', 'students.views.students.students_list', name='home'),
@@ -47,12 +49,16 @@ urlpatterns = patterns('',
     url(r'^journal$', 'students.views.journal.journal',
         name='journal'),
 
+    url(r'^contact_admin/', ContactAdminView.as_view(), name="contact_admin"),
 
-    # Contact admin form
-    url(r'^contact_admin/$', 'students.views.contact_admin.contact_admin', 
-        name='contact_admin'),
-    
+    url(r'^contact_admin_sent/$', SuccessSentView.as_view(),
+        name='contact_admin_sent'),
+
     url(r'^admin/', include(admin.site.urls)),
+
+    # simple captcha
+    url(r'^captcha/', include('captcha.urls')),
+
 )
 
 if DEBUG:
