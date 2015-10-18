@@ -20,7 +20,7 @@ from django.contrib import admin
 from .settings import MEDIA_ROOT, DEBUG
 
 from students.views.contact_admin import ContactAdminView, SuccessSentView
-from students.views.students import StudentUpdateView
+from students.views.students import StudentUpdateView, StudentCreateView
 
 urlpatterns = patterns('',
 
@@ -28,7 +28,7 @@ urlpatterns = patterns('',
     url(r'^$', 'students.views.students.students_list', name='home'),
 
     url(r'^students/add/$',
-        'students.views.students.students_add',
+        StudentCreateView.as_view(),
         name='students_add'),
 
     url(r'^students/(?P<pk>\d+)/edit/$',

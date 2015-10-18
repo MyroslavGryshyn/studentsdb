@@ -27,6 +27,7 @@ MANAGERS	studentsdb/settings.py	/^MANAGERS = ($/;"	v
 MEDIA_ROOT	studentsdb/settings.py	/^MEDIA_ROOT = os.path.join(BASE_DIR, '..', 'media')$/;"	v
 MEDIA_URL	studentsdb/settings.py	/^MEDIA_URL = '\/media\/'$/;"	v
 MIDDLEWARE_CLASSES	studentsdb/settings.py	/^MIDDLEWARE_CLASSES = ($/;"	v
+Meta	students/forms/forms.py	/^    class Meta:$/;"	c	class:StudentCreateForm
 Meta	students/forms/forms.py	/^    class Meta:$/;"	c	class:StudentUpdateForm
 Meta	students/models/group.py	/^    class Meta(object):$/;"	c	class:Group
 Meta	students/models/monthjournal.py	/^    class Meta(object):$/;"	c	class:MonthJournal
@@ -37,6 +38,8 @@ MonthJournal	students/models/monthjournal.py	/^class MonthJournal(models.Model):
 ROOT_URLCONF	studentsdb/settings.py	/^ROOT_URLCONF = 'studentsdb.urls'$/;"	v
 STATIC_URL	studentsdb/settings.py	/^STATIC_URL = '\/static\/'$/;"	v
 Student	students/models/student.py	/^class Student(models.Model):$/;"	c
+StudentCreateForm	students/forms/forms.py	/^class StudentCreateForm(ModelForm):$/;"	c
+StudentCreateView	students/views/students.py	/^class StudentCreateView(CreateView):$/;"	c
 StudentUpdateForm	students/forms/forms.py	/^class StudentUpdateForm(ModelForm):$/;"	c
 StudentUpdateView	students/views/students.py	/^class StudentUpdateView(UpdateView):$/;"	c
 SuccessSentView	students/views/contact_admin.py	/^class SuccessSentView(TemplateView):$/;"	c
@@ -47,6 +50,7 @@ USE_I18N	studentsdb/settings.py	/^USE_I18N = True$/;"	v
 USE_L10N	studentsdb/settings.py	/^USE_L10N = True$/;"	v
 USE_TZ	studentsdb/settings.py	/^USE_TZ = True$/;"	v
 WSGI_APPLICATION	studentsdb/settings.py	/^WSGI_APPLICATION = 'studentsdb.wsgi.application'$/;"	v
+__init__	students/forms/forms.py	/^    def __init__(self, *args, **kwargs):$/;"	m	class:StudentCreateForm
 __init__	students/forms/forms.py	/^    def __init__(self, *args, **kwargs):$/;"	m	class:StudentUpdateForm
 __init__	students/forms/forms.py	/^    def __init__(self, request=None, *args, **kwargs):$/;"	m	class:ContactAdmin
 __unicode__	students/models/group.py	/^    def __unicode__(self):$/;"	m	class:Group	file:
@@ -67,13 +71,16 @@ dependencies	students/migrations/0001_initial.py	/^    dependencies = [$/;"	v	cl
 dependencies	students/migrations/0002_monthjournal.py	/^    dependencies = [$/;"	v	class:Migration
 email	students/forms/forms.py	/^    email = forms.EmailField($/;"	v	class:ContactAdmin
 field	students/migrations/0001_initial.py	/^            field=models.OneToOneField(null=True, on_delete=django.db.models.deletion.SET_NULL, blank=True, to='students.Student', verbose_name='\\u0421\\u0442\\u0430\\u0440\\u043e\\u0441\\u0442\\u0430'),$/;"	v	class:Migration
+fields	students/forms/forms.py	/^        fields = '__all__'$/;"	v	class:StudentCreateForm.Meta
 fields	students/forms/forms.py	/^        fields = '__all__'$/;"	v	class:StudentUpdateForm.Meta
 fields	students/migrations/0001_initial.py	/^            fields=[$/;"	v	class:Migration
 fields	students/migrations/0002_monthjournal.py	/^            fields=[$/;"	v	class:Migration
 first_name	students/models/student.py	/^    first_name = models.CharField($/;"	v	class:Student
 form_class	students/views/contact_admin.py	/^    form_class = ContactAdmin$/;"	v	class:ContactAdminView
+form_class	students/views/students.py	/^    form_class = StudentCreateForm$/;"	v	class:StudentCreateView
 form_class	students/views/students.py	/^    form_class = StudentUpdateForm$/;"	v	class:StudentUpdateView
 get_success_url	students/views/contact_admin.py	/^    def get_success_url(self):$/;"	m	class:ContactAdminView
+get_success_url	students/views/students.py	/^    def get_success_url(self):$/;"	m	class:StudentCreateView
 get_success_url	students/views/students.py	/^    def get_success_url(self):$/;"	m	class:StudentUpdateView
 groups_add	students/views/groups.py	/^def groups_add(request):$/;"	f
 groups_delete	students/views/groups.py	/^def groups_delete(request, gid):$/;"	f
@@ -86,7 +93,9 @@ load_more	students/static/js/load-page.js	/^function load_more() {$/;"	f
 max_length	students/models/group.py	/^        max_length=256,$/;"	v	class:Group.Meta
 max_length	students/models/student.py	/^        max_length=256,$/;"	v	class:Student.Meta
 middle_name	students/models/student.py	/^    middle_name = models.CharField($/;"	v	class:Student
+model	students/forms/forms.py	/^        model = Student$/;"	v	class:StudentCreateForm.Meta
 model	students/forms/forms.py	/^        model = Student$/;"	v	class:StudentUpdateForm.Meta
+model	students/views/students.py	/^    model = Student$/;"	v	class:StudentCreateView
 model	students/views/students.py	/^    model = Student$/;"	v	class:StudentUpdateView
 model_name	students/migrations/0001_initial.py	/^            model_name='group',$/;"	v	class:Migration
 name	students/migrations/0001_initial.py	/^            name='Group',$/;"	v	class:Migration
@@ -115,6 +124,7 @@ options	students/migrations/0001_initial.py	/^            options={$/;"	v	class:
 options	students/migrations/0002_monthjournal.py	/^            options={$/;"	v	class:Migration
 ordering	students/models/student.py	/^        ordering = ['id']$/;"	v	class:Student.Meta
 photo	students/models/student.py	/^    photo = models.ImageField($/;"	v	class:Student
+post	students/views/students.py	/^    def post(self, request, *args, **kwargs):$/;"	m	class:StudentCreateView
 post	students/views/students.py	/^    def post(self, request, *args, **kwargs):$/;"	m	class:StudentUpdateView
 present_day1	students/models/monthjournal.py	/^    present_day1 = models.BooleanField(default=False)$/;"	v	class:MonthJournal
 present_day10	students/models/monthjournal.py	/^    present_day10 = models.BooleanField(default=False)$/;"	v	class:MonthJournal
@@ -156,12 +166,12 @@ set_prefs	students/.ropeproject/config.py	/^def set_prefs(prefs):$/;"	f
 set_prefs	studentsdb/.ropeproject/config.py	/^def set_prefs(prefs):$/;"	f
 student	students/models/monthjournal.py	/^    student = models.ForeignKey('Student',$/;"	v	class:MonthJournal
 student_group	students/models/student.py	/^    student_group = models.ForeignKey('Group',$/;"	v	class:Student
-students_add	students/views/students.py	/^def students_add(request):$/;"	f
 students_delete	students/views/students.py	/^def students_delete(request, sid):$/;"	f
 students_list	students/views/students.py	/^def students_list(request):$/;"	f
 students_proc	studentsdb/context_processors.py	/^def students_proc(request):$/;"	f
 subject	students/forms/forms.py	/^    subject = forms.CharField($/;"	v	class:ContactAdmin
 template_name	students/views/contact_admin.py	/^    template_name = 'contact_form\/contact_admin_sent.html'$/;"	v	class:SuccessSentView
+template_name	students/views/students.py	/^    template_name = 'students\/students_add.html'$/;"	v	class:StudentCreateView
 template_name	students/views/students.py	/^    template_name = 'students\/students_edit.html'$/;"	v	class:StudentUpdateView
 ticket	students/models/student.py	/^    ticket = models.CharField($/;"	v	class:Student
 title	students/models/group.py	/^    title = models.CharField($/;"	v	class:Group
