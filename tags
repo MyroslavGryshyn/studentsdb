@@ -40,6 +40,7 @@ STATIC_URL	studentsdb/settings.py	/^STATIC_URL = '\/static\/'$/;"	v
 Student	students/models/student.py	/^class Student(models.Model):$/;"	c
 StudentCreateForm	students/forms/forms.py	/^class StudentCreateForm(ModelForm):$/;"	c
 StudentCreateView	students/views/students.py	/^class StudentCreateView(CreateView):$/;"	c
+StudentDeleteView	students/views/students.py	/^class StudentDeleteView(DeleteView):$/;"	c
 StudentUpdateForm	students/forms/forms.py	/^class StudentUpdateForm(ModelForm):$/;"	c
 StudentUpdateView	students/views/students.py	/^class StudentUpdateView(UpdateView):$/;"	c
 SuccessSentView	students/views/contact_admin.py	/^class SuccessSentView(TemplateView):$/;"	c
@@ -81,6 +82,7 @@ form_class	students/views/students.py	/^    form_class = StudentCreateForm$/;"	v
 form_class	students/views/students.py	/^    form_class = StudentUpdateForm$/;"	v	class:StudentUpdateView
 get_success_url	students/views/contact_admin.py	/^    def get_success_url(self):$/;"	m	class:ContactAdminView
 get_success_url	students/views/students.py	/^    def get_success_url(self):$/;"	m	class:StudentCreateView
+get_success_url	students/views/students.py	/^    def get_success_url(self):$/;"	m	class:StudentDeleteView
 get_success_url	students/views/students.py	/^    def get_success_url(self):$/;"	m	class:StudentUpdateView
 groups_add	students/views/groups.py	/^def groups_add(request):$/;"	f
 groups_delete	students/views/groups.py	/^def groups_delete(request, gid):$/;"	f
@@ -96,6 +98,7 @@ middle_name	students/models/student.py	/^    middle_name = models.CharField($/;"
 model	students/forms/forms.py	/^        model = Student$/;"	v	class:StudentCreateForm.Meta
 model	students/forms/forms.py	/^        model = Student$/;"	v	class:StudentUpdateForm.Meta
 model	students/views/students.py	/^    model = Student$/;"	v	class:StudentCreateView
+model	students/views/students.py	/^    model = Student$/;"	v	class:StudentDeleteView
 model	students/views/students.py	/^    model = Student$/;"	v	class:StudentUpdateView
 model_name	students/migrations/0001_initial.py	/^            model_name='group',$/;"	v	class:Migration
 name	students/migrations/0001_initial.py	/^            name='Group',$/;"	v	class:Migration
@@ -110,6 +113,7 @@ name	studentsdb/urls.py	/^        name='groups_delete'),$/;"	v
 name	studentsdb/urls.py	/^        name='groups_edit'),$/;"	v
 name	studentsdb/urls.py	/^        name='journal'),$/;"	v
 name	studentsdb/urls.py	/^        name='students_add'),$/;"	v
+name	studentsdb/urls.py	/^        name='students_delete'),$/;"	v
 name	studentsdb/urls.py	/^        name='students_edit'),$/;"	v
 notes	students/models/group.py	/^    notes = models.TextField($/;"	v	class:Group
 notes	students/models/student.py	/^    notes = models.TextField($/;"	v	class:Student
@@ -166,11 +170,11 @@ set_prefs	students/.ropeproject/config.py	/^def set_prefs(prefs):$/;"	f
 set_prefs	studentsdb/.ropeproject/config.py	/^def set_prefs(prefs):$/;"	f
 student	students/models/monthjournal.py	/^    student = models.ForeignKey('Student',$/;"	v	class:MonthJournal
 student_group	students/models/student.py	/^    student_group = models.ForeignKey('Group',$/;"	v	class:Student
-students_delete	students/views/students.py	/^def students_delete(request, sid):$/;"	f
 students_list	students/views/students.py	/^def students_list(request):$/;"	f
 students_proc	studentsdb/context_processors.py	/^def students_proc(request):$/;"	f
 subject	students/forms/forms.py	/^    subject = forms.CharField($/;"	v	class:ContactAdmin
 template_name	students/views/contact_admin.py	/^    template_name = 'contact_form\/contact_admin_sent.html'$/;"	v	class:SuccessSentView
+template_name	students/views/students.py	/^    template_name = 'students\/students_confirm_delete.html'$/;"	v	class:StudentDeleteView
 template_name	students/views/students.py	/^    template_name = 'students\/students_form.html'$/;"	v	class:StudentCreateView
 template_name	students/views/students.py	/^    template_name = 'students\/students_form.html'$/;"	v	class:StudentUpdateView
 ticket	students/models/student.py	/^    ticket = models.CharField($/;"	v	class:Student

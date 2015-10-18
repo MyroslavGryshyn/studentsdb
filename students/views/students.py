@@ -5,7 +5,7 @@ from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from django.core.urlresolvers import reverse
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-from django.views.generic import UpdateView, CreateView
+from django.views.generic import UpdateView, CreateView, DeleteView
 import imghdr
 from django.contrib import messages
 
@@ -48,6 +48,17 @@ class StudentCreateView(CreateView):
             return super(StudentCreateView, self).post(request, *args, **kwargs)
 
 
+class StudentDeleteView(DeleteView):
+    model = Student
+    template_name = 'students/students_confirm_delete.html'
+
+
+    def get_success_url(self):
+        messages.success(self.request, u'Студента {} успішно видалено!'. \
+                         format(self.get_object(queryset=None)))
+        return reverse('home')
+
+
 # Views for Students
 
 def students_list(request):
@@ -74,8 +85,4 @@ def students_list(request):
 
     return render(request, 'students/students_list.html',
                 {'students': students})
-
-
-def students_delete(request, sid):
-    return HttpResponse('<h1>Delete Student %s</h1>' % sid)
 
