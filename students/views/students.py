@@ -16,7 +16,7 @@ from ..forms.forms import StudentUpdateForm, StudentCreateForm
 #Class based views for Students
 class StudentUpdateView(UpdateView):
     model = Student
-    template_name = 'students/students_edit.html'
+    template_name = 'students/students_form.html'
     form_class = StudentUpdateForm
 
     def get_success_url(self):
@@ -29,6 +29,23 @@ class StudentUpdateView(UpdateView):
         else:
             messages.success(request, u'Студента успішно збережено!')
             return super(StudentUpdateView, self).post(request, *args, **kwargs)
+
+
+class StudentCreateView(CreateView):
+    model = Student
+    template_name = 'students/students_form.html'
+    form_class = StudentCreateForm
+
+    def get_success_url(self):
+        return reverse('home')
+
+    def post(self, request, *args, **kwargs):
+        if request.POST.get('cancel_button'):
+            messages.error(request, u'Ви відмінили додавання студента')
+            return HttpResponseRedirect(reverse('home'))
+        else:
+            messages.success(request, u'Студента успішно збережено!')
+            return super(StudentCreateView, self).post(request, *args, **kwargs)
 
 
 # Views for Students
@@ -57,23 +74,6 @@ def students_list(request):
 
     return render(request, 'students/students_list.html',
                 {'students': students})
-
-
-class StudentCreateView(CreateView):
-    model = Student
-    template_name = 'students/students_add.html'
-    form_class = StudentCreateForm
-
-    def get_success_url(self):
-        return reverse('home')
-
-    def post(self, request, *args, **kwargs):
-        if request.POST.get('cancel_button'):
-            messages.error(request, u'Ви відмінили додавання студента')
-            return HttpResponseRedirect(reverse('home'))
-        else:
-            messages.success(request, u'Студента успішно збережено!')
-            return super(StudentCreateView, self).post(request, *args, **kwargs)
 
 
 def students_delete(request, sid):

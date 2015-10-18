@@ -171,8 +171,8 @@ students_list	students/views/students.py	/^def students_list(request):$/;"	f
 students_proc	studentsdb/context_processors.py	/^def students_proc(request):$/;"	f
 subject	students/forms/forms.py	/^    subject = forms.CharField($/;"	v	class:ContactAdmin
 template_name	students/views/contact_admin.py	/^    template_name = 'contact_form\/contact_admin_sent.html'$/;"	v	class:SuccessSentView
-template_name	students/views/students.py	/^    template_name = 'students\/students_add.html'$/;"	v	class:StudentCreateView
-template_name	students/views/students.py	/^    template_name = 'students\/students_edit.html'$/;"	v	class:StudentUpdateView
+template_name	students/views/students.py	/^    template_name = 'students\/students_form.html'$/;"	v	class:StudentCreateView
+template_name	students/views/students.py	/^    template_name = 'students\/students_form.html'$/;"	v	class:StudentUpdateView
 ticket	students/models/student.py	/^    ticket = models.CharField($/;"	v	class:Student
 title	students/models/group.py	/^    title = models.CharField($/;"	v	class:Group
 unique_for_month	students/models/monthjournal.py	/^        unique_for_month='date')$/;"	v	class:MonthJournal.Meta
