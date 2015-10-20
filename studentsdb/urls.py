@@ -23,6 +23,8 @@ from students.views.contact_admin import ContactAdminView, SuccessSentView
 from students.views.students import StudentUpdateView, StudentCreateView, \
                                     StudentDeleteView
 
+from students.views.groups import GroupDeleteView
+
 urlpatterns = patterns('',
 
     # Students urls
@@ -48,8 +50,8 @@ urlpatterns = patterns('',
         name='groups_add'),
     url(r'^groups/(?P<gid>\d+)/edit/$', 'students.views.groups.groups_edit',
         name='groups_edit'),
-    url(r'^groups/(?P<gid>\d+)/delete/$',
-        'students.views.groups.groups_delete',
+    url(r'^groups/(?P<pk>\d+)/delete/$',
+        GroupDeleteView.as_view(),
         name='groups_delete'),
 
     # Journal urls

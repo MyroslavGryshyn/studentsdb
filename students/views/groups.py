@@ -2,6 +2,12 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.core.urlresolvers import reverse
+from django.contrib import messages
+from django.views.generic import UpdateView, CreateView, DeleteView
+from django.db.models.deletion import ProtectedError
+from django.http import HttpResponse, HttpResponseRedirect
+
 from ..models.group import Group
 
 # Views for Groups
@@ -39,5 +45,25 @@ def groups_add(request):
 def groups_edit(request, gid):
     return HttpResponse('<h1>Edit Group %s</h1>' % gid)
 
-def groups_delete(request, gid):
-    return HttpResponse('<h1>Delete Group %s</h1>' % gid)
+class GroupDeleteView(DeleteView):
+    model = Group
+    template_name = 'students/group_confirm_delete.html'
+
+
+    def get_success_url(self):
+        return reverse('home')
+
+
+    def post(self, request, *args, **kwargs):
+        try:
+            a = self.delete(request, *args, **kwargs)
+            if a:
+                messages.success(self.request, u'Група {} успішно видалена!'.
+                                 format(self.get_object(queryset=None)))
+            return a
+        except ProtectedError:
+            messages.error(self.request, u'Група {} має студентів, \
+                             будь ласка, видаліть спочатку їх!'. \
+                             format(self.get_object(queryset=None)))
+
+            return HttpResponseRedirect(reverse('groups'))
