@@ -14,9 +14,16 @@ class StudentAdmin(admin.ModelAdmin):
     search_fields = ['last_name', 'first_name', 
                      'middle_name', 'ticket', 'notes']
 
+    actions = ['make_copy']
+
     def view_on_site(self, obj):
         return reverse('students_edit', kwargs={'pk': obj.id})
 
+    def make_copy(self, request, queryset):
+        for object in queryset:
+            object.id = None
+            object.save()
+    make_copy.short_description = "Make copy of checked students"
 
 class GroupAdmin(admin.ModelAdmin):
     list_display = ['title', 'leader', 'notes']

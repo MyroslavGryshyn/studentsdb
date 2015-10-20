@@ -60,6 +60,7 @@ __init__	students/forms/forms.py	/^    def __init__(self, request=None, *args, *
 __unicode__	students/models/group.py	/^    def __unicode__(self):$/;"	m	class:Group	file:
 __unicode__	students/models/monthjournal.py	/^    def __unicode__(self):$/;"	m	class:MonthJournal	file:
 __unicode__	students/models/student.py	/^    def __unicode__(self):$/;"	m	class:Student	file:
+actions	students/admin.py	/^    actions = ['make_copy']$/;"	v	class:StudentAdmin
 application	studentsdb/wsgi.py	/^application = get_wsgi_application()$/;"	v
 birthday	students/models/student.py	/^    birthday = models.DateField($/;"	v	class:Student
 blank	students/models/group.py	/^        blank=False,$/;"	v	class:Group.Meta
@@ -104,6 +105,7 @@ list_filter	students/admin.py	/^    list_filter = ['student_group']$/;"	v	class:
 list_per_page	students/admin.py	/^    list_per_page = 10$/;"	v	class:GroupAdmin
 list_per_page	students/admin.py	/^    list_per_page = 10$/;"	v	class:StudentAdmin
 load_more	students/static/js/load-page.js	/^function load_more() {$/;"	f
+make_copy	students/admin.py	/^    def make_copy(self, request, queryset):$/;"	m	class:StudentAdmin
 max_length	students/models/group.py	/^        max_length=256,$/;"	v	class:Group.Meta
 max_length	students/models/student.py	/^        max_length=256,$/;"	v	class:Student.Meta
 middle_name	students/models/student.py	/^    middle_name = models.CharField($/;"	v	class:Student
