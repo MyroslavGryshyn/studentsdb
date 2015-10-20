@@ -67,3 +67,4 @@ class GroupDeleteView(DeleteView):
                              format(self.get_object(queryset=None)))
 
             return HttpResponseRedirect(reverse('groups'))
+
