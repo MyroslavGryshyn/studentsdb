@@ -23,6 +23,7 @@ EMAIL_USE_TLS	studentsdb/settings.py	/^EMAIL_USE_TLS = True$/;"	v
 Group	students/models/group.py	/^class Group(models.Model):$/;"	c
 GroupAdmin	students/admin.py	/^class GroupAdmin(admin.ModelAdmin):$/;"	c
 GroupDeleteView	students/views/groups.py	/^class GroupDeleteView(DeleteView):$/;"	c
+GroupFormAdmin	students/admin.py	/^class GroupFormAdmin(ModelForm):$/;"	c
 INSTALLED_APPS	studentsdb/settings.py	/^INSTALLED_APPS = ($/;"	v
 LANGUAGE_CODE	studentsdb/settings.py	/^LANGUAGE_CODE = 'uk'$/;"	v
 MANAGERS	studentsdb/settings.py	/^MANAGERS = ($/;"	v
@@ -71,6 +72,7 @@ blank	students/models/monthjournal.py	/^        blank=False,$/;"	v	class:MonthJo
 blank	students/models/student.py	/^        blank=False,$/;"	v	class:Student.Meta
 blank	students/models/student.py	/^        blank=True,$/;"	v	class:Student.Meta
 body	students/forms/forms.py	/^    body = forms.CharField($/;"	v	class:ContactAdmin
+clean_leader	students/admin.py	/^    def clean_leader(self):$/;"	m	class:GroupFormAdmin
 clean_student_group	students/admin.py	/^    def clean_student_group(self):$/;"	m	class:StudentFormAdmin
 date	students/models/monthjournal.py	/^    date = models.DateField($/;"	v	class:MonthJournal
 default	students/models/student.py	/^        default='')$/;"	v	class:Student.Meta
@@ -84,6 +86,7 @@ fields	students/forms/forms.py	/^        fields = '__all__'$/;"	v	class:StudentU
 fields	students/migrations/0001_initial.py	/^            fields=[$/;"	v	class:Migration
 fields	students/migrations/0002_monthjournal.py	/^            fields=[$/;"	v	class:Migration
 first_name	students/models/student.py	/^    first_name = models.CharField($/;"	v	class:Student
+form	students/admin.py	/^    form =  GroupFormAdmin$/;"	v	class:GroupAdmin
 form	students/admin.py	/^    form =  StudentFormAdmin$/;"	v	class:StudentAdmin
 form_class	students/views/contact_admin.py	/^    form_class = ContactAdmin$/;"	v	class:ContactAdminView
 form_class	students/views/students.py	/^    form_class = StudentCreateForm$/;"	v	class:StudentCreateView

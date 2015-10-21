@@ -43,6 +43,21 @@ class StudentAdmin(admin.ModelAdmin):
             object.save()
     make_copy.short_description = u"Скопіювати вибраних студентів"
 
+
+class GroupFormAdmin(ModelForm):
+    def clean_leader(self):
+        """Check if leader is this group member."""
+
+        # get group which this student belongs to
+        student = self.instance.leader
+        #self.instance.id
+        if student.student_group != self.instance:
+            raise ValidationError(u'Студент належить до іншої групи!', \
+            code='invalid')
+
+        return self.cleaned_data['leader']
+
+
 class GroupAdmin(admin.ModelAdmin):
     list_display = ['title', 'leader', 'notes']
     list_display_links = ['title']
@@ -51,6 +66,7 @@ class GroupAdmin(admin.ModelAdmin):
     list_per_page = 10
     search_fields = ['title', 'leader', 
                      'notes']
+    form =  GroupFormAdmin
 
     def view_on_site(self, obj):
         return reverse('groups_edit', kwargs={'pk': obj.id})
