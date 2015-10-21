@@ -57,7 +57,6 @@ class GroupFormAdmin(ModelForm):
 
         return self.cleaned_data['leader']
 
-
 class GroupAdmin(admin.ModelAdmin):
     list_display = ['title', 'leader', 'notes']
     list_display_links = ['title']
