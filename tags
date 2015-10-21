@@ -44,6 +44,7 @@ StudentAdmin	students/admin.py	/^class StudentAdmin(admin.ModelAdmin):$/;"	c
 StudentCreateForm	students/forms/forms.py	/^class StudentCreateForm(ModelForm):$/;"	c
 StudentCreateView	students/views/students.py	/^class StudentCreateView(CreateView):$/;"	c
 StudentDeleteView	students/views/students.py	/^class StudentDeleteView(DeleteView):$/;"	c
+StudentFormAdmin	students/admin.py	/^class StudentFormAdmin(ModelForm):$/;"	c
 StudentUpdateForm	students/forms/forms.py	/^class StudentUpdateForm(ModelForm):$/;"	c
 StudentUpdateView	students/views/students.py	/^class StudentUpdateView(UpdateView):$/;"	c
 SuccessSentView	students/views/contact_admin.py	/^class SuccessSentView(TemplateView):$/;"	c
@@ -70,8 +71,10 @@ blank	students/models/monthjournal.py	/^        blank=False,$/;"	v	class:MonthJo
 blank	students/models/student.py	/^        blank=False,$/;"	v	class:Student.Meta
 blank	students/models/student.py	/^        blank=True,$/;"	v	class:Student.Meta
 body	students/forms/forms.py	/^    body = forms.CharField($/;"	v	class:ContactAdmin
+clean_student_group	students/admin.py	/^    def clean_student_group(self):$/;"	m	class:StudentFormAdmin
 date	students/models/monthjournal.py	/^    date = models.DateField($/;"	v	class:MonthJournal
 default	students/models/student.py	/^        default='')$/;"	v	class:Student.Meta
+delete	students/views/groups.py	/^    def delete(self, request, *args, **kwargs):$/;"	m	class:GroupDeleteView
 dependencies	students/migrations/0001_initial.py	/^    dependencies = [$/;"	v	class:Migration
 dependencies	students/migrations/0002_monthjournal.py	/^    dependencies = [$/;"	v	class:Migration
 email	students/forms/forms.py	/^    email = forms.EmailField($/;"	v	class:ContactAdmin
@@ -81,11 +84,11 @@ fields	students/forms/forms.py	/^        fields = '__all__'$/;"	v	class:StudentU
 fields	students/migrations/0001_initial.py	/^            fields=[$/;"	v	class:Migration
 fields	students/migrations/0002_monthjournal.py	/^            fields=[$/;"	v	class:Migration
 first_name	students/models/student.py	/^    first_name = models.CharField($/;"	v	class:Student
+form	students/admin.py	/^    form =  StudentFormAdmin$/;"	v	class:StudentAdmin
 form_class	students/views/contact_admin.py	/^    form_class = ContactAdmin$/;"	v	class:ContactAdminView
 form_class	students/views/students.py	/^    form_class = StudentCreateForm$/;"	v	class:StudentCreateView
 form_class	students/views/students.py	/^    form_class = StudentUpdateForm$/;"	v	class:StudentUpdateView
 get_success_url	students/views/contact_admin.py	/^    def get_success_url(self):$/;"	m	class:ContactAdminView
-get_success_url	students/views/groups.py	/^    def get_success_url(self):$/;"	m	class:GroupDeleteView
 get_success_url	students/views/students.py	/^    def get_success_url(self):$/;"	m	class:StudentCreateView
 get_success_url	students/views/students.py	/^    def get_success_url(self):$/;"	m	class:StudentDeleteView
 get_success_url	students/views/students.py	/^    def get_success_url(self):$/;"	m	class:StudentUpdateView
@@ -145,7 +148,6 @@ ordering	students/admin.py	/^    ordering = ['last_name']$/;"	v	class:StudentAdm
 ordering	students/admin.py	/^    ordering = ['title']$/;"	v	class:GroupAdmin
 ordering	students/models/student.py	/^        ordering = ['id']$/;"	v	class:Student.Meta
 photo	students/models/student.py	/^    photo = models.ImageField($/;"	v	class:Student
-post	students/views/groups.py	/^    def post(self, request, *args, **kwargs):$/;"	m	class:GroupDeleteView
 post	students/views/students.py	/^    def post(self, request, *args, **kwargs):$/;"	m	class:StudentCreateView
 post	students/views/students.py	/^    def post(self, request, *args, **kwargs):$/;"	m	class:StudentUpdateView
 present_day1	students/models/monthjournal.py	/^    present_day1 = models.BooleanField(default=False)$/;"	v	class:MonthJournal

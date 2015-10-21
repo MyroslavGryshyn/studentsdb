@@ -49,22 +49,15 @@ class GroupDeleteView(DeleteView):
     model = Group
     template_name = 'students/group_confirm_delete.html'
 
-
-    def get_success_url(self):
-        return reverse('home')
-
-
-    def post(self, request, *args, **kwargs):
+    def delete(self, request, *args, **kwargs):
         try:
-            a = self.delete(request, *args, **kwargs)
-            if a:
-                messages.success(self.request, u'Група {} успішно видалена!'.
-                                 format(self.get_object(queryset=None)))
-            return a
-        except ProtectedError:
+            self.object = self.get_object()
+            self.object.delete()
+            messages.success(self.request, u'Група {} успішно видалена!'. \
+                             format(self.object.title))
+        except:
             messages.error(self.request, u'Група {} має студентів, \
-                             будь ласка, видаліть спочатку їх!'. \
-                             format(self.get_object(queryset=None)))
-
-            return HttpResponseRedirect(reverse('groups'))
+                         будь ласка, видаліть спочатку їх!'. \
+                         format(self.object.title))
+        return HttpResponseRedirect(reverse('groups'))
 

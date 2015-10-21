@@ -1,8 +1,25 @@
+# -*- coding: utf-8 -*-
 from django.contrib import admin
 from django.core.urlresolvers import reverse
+from django.forms import ModelForm, ValidationError
 
 from .models import Student, Group
 from .models.monthjournal import MonthJournal
+
+class StudentFormAdmin(ModelForm):
+    def clean_student_group(self):
+        """Check if student is leader in any group.
+        If yes, then ensure it's the same as selected group."""
+
+        # get group where current student is a leader
+        groups = Group.objects.filter(leader=self.instance)
+
+        if len(groups) > 0 and self.cleaned_data['student_group'] != groups[0]:
+            raise ValidationError(u'Студент є старостою іншої групи!', \
+            code='invalid')
+
+        return self.cleaned_data['student_group']
+
 
 class StudentAdmin(admin.ModelAdmin):
     list_display = ['last_name', 'first_name', 'ticket', 'student_group']
@@ -15,6 +32,7 @@ class StudentAdmin(admin.ModelAdmin):
                      'middle_name', 'ticket', 'notes']
 
     actions = ['make_copy']
+    form =  StudentFormAdmin
 
     def view_on_site(self, obj):
         return reverse('students_edit', kwargs={'pk': obj.id})
@@ -23,7 +41,7 @@ class StudentAdmin(admin.ModelAdmin):
         for object in queryset:
             object.id = None
             object.save()
-    make_copy.short_description = "Make copy of checked students"
+    make_copy.short_description = u"Скопіювати вибраних студентів"
 
 class GroupAdmin(admin.ModelAdmin):
     list_display = ['title', 'leader', 'notes']
