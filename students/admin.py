@@ -49,9 +49,9 @@ class GroupFormAdmin(ModelForm):
         """Check if leader is this group member."""
 
         # get group which this student belongs to
-        student = self.instance.leader
-        #self.instance.id
-        if student.student_group != self.instance:
+        new_leader = self.cleaned_data['leader']
+
+        if new_leader.student_group != self.instance:
             raise ValidationError(u'Студент належить до іншої групи!', \
             code='invalid')
 

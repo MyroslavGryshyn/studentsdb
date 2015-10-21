@@ -74,6 +74,7 @@ blank	students/models/student.py	/^        blank=True,$/;"	v	class:Student.Meta
 body	students/forms/forms.py	/^    body = forms.CharField($/;"	v	class:ContactAdmin
 clean_leader	students/admin.py	/^    def clean_leader(self):$/;"	m	class:GroupFormAdmin
 clean_student_group	students/admin.py	/^    def clean_student_group(self):$/;"	m	class:StudentFormAdmin
+clean_student_group	students/forms/forms.py	/^    def clean_student_group(self):$/;"	m	class:StudentUpdateForm
 date	students/models/monthjournal.py	/^    date = models.DateField($/;"	v	class:MonthJournal
 default	students/models/student.py	/^        default='')$/;"	v	class:Student.Meta
 delete	students/views/groups.py	/^    def delete(self, request, *args, **kwargs):$/;"	m	class:GroupDeleteView
