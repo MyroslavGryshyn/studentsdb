@@ -22,7 +22,7 @@ from .settings import MEDIA_ROOT, DEBUG
 from students.views.contact_admin import ContactAdminView, SuccessSentView
 from students.views.students import StudentUpdateView, StudentCreateView, \
                                     StudentDeleteView
-
+from students.views.journal import JournalView
 from students.views.groups import GroupDeleteView
 
 urlpatterns = patterns('',
@@ -56,8 +56,7 @@ urlpatterns = patterns('',
 
     # Journal urls
 
-    url(r'^journal$', 'students.views.journal.journal',
-        name='journal'),
+    url(r'^journal/$', JournalView.as_view(), name='journal'),
 
     url(r'^contact_admin/',
         ContactAdminView.as_view(),

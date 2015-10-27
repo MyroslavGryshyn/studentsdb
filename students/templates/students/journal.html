@@ -2,50 +2,94 @@
 
 {% load static from staticfiles %}
 
-{% block meta_title %}Відвідування{% endblock meta_title %}
+{% block meta_title %}Облік Відвідування{% endblock meta_title %}
 
-{% block title %}Облік відвідування{% endblock title %}
+{% block title %}Облік Відвідування{% endblock title %}
 
 {% block content %}
 
-<!-- Start Students Listing -->
-<table class="table table-striped">
-  <tbody>
-   <div align="center" class="col-xs-12"><a href="#">&larr;</a>
-    <b>
-      {{ month }}
-      Month Year
-    </b><a href="#">&rarr;</a>
-   </div>
- <!-- Starts Students Listing -->
-    <table class="table table-bordered table-hover">
-      <thead>
-      <tr>
-        <th>#</th>
+{% if not students %}
+
+<div class="alert alert-warning">
+    Поки немає жодного студента в базі. Будь-ласка,
+    <a href="{% url "students_add" %}">додайте</a> першого.
+</div>
+
+{% else %}
+
+<div class="alert alert-warning">
+    Зміни в журнал зберігаються автоматично при кожному кліку в клітинці
+    таблиці.
+    <span id="ajax-progress-indicator">Йде збереження...</span>
+</div>
+
+<p id="journal-nav" class="text-center">
+  <a href="?month={{ prev_month }}"
+     title="Попередній Місяць">&larr;</a>
+  <!-- TODO: translate month name -->
+  <strong>{{ month_verbose }} {{ year }}</strong>
+  <a href="?month={{ next_month }}"
+     title="Наступний Місяць">&rarr;</a>
+</p>
+
+<table class="table table-hover table-striped table-bordered"
+       id="students-journal">
+
+  <thead>
+    <tr>
+      <th>#</th>
       <th>Студент</th>
-       {% for day in journal_list.0.date.keys %}
-       <th>{{day}}</th>
-       {% endfor %}
-    </thead>
+      {% for day in month_header %}
+      <th class="day-header">
+        <!-- TODO: translate day name -->
+        {{ day.verbose }}
+        <br />
+        {{ day.day }}
+      </th>
+      {% endfor %}
+    </tr>
+  </thead>
 
-    <tbody>
-   {% for student in journal_list %}
-      <tr>
-        <td>{{ forloop.counter }}</td>
-        <td><a href="">{{student.surname}}<br>{{student.name}}</a></td>
-        {% for present in student.date.values%}
-        <td><input type="checkbox" {% if present %}checked{%endif%}/></td>
-        {% endfor %}
-      </tr>
-    </tbody> 
-   {% endfor %}
+  <tbody>
+
+    {% csrf_token %}
+
+    {% for student in students %}
+    <tr>
+
+      <td>
+        {% if is_paginated %}
+          {{ page_obj.start_index|add:forloop.counter0 }}
+        {% else %}
+          {{ forloop.counter }}
+        {% endif %}
+      </td>
+
+      <td>
+        <a title="Редагувати" target="_blank"
+           href="{% url "students_edit" student.id %}">
+          {{ student.fullname }}
+        </a>
+      </td>
+
+      {% for day in student.days %}
+      <td class="day-box">
+        <input type="checkbox" data-student-id="{{ student.id }}"
+               data-date="{{ day.date }}" data-url="{{ student.update_url }}"
+               value="1"{% if day.present %} checked="checked" {% endif %} />
+      </td>
+      {% endfor %}
+
+    </tr>
+    {% endfor %}
+
+  </tbody>
 </table>
-<!-- End Students Listing -->
 
-{% include "students/pagination.html" %}
+{% endif %}
+
+{% with object_list=students %}
+  {% include "students/pagination.html" %}
+{% endwith %}
 
 {% endblock content %}
-
-{% block footer %}
-  &copy; 2015 Сервіс Обліку Студентів
-{% endblock footer %}

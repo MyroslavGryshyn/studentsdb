@@ -25,6 +25,7 @@ GroupAdmin	students/admin.py	/^class GroupAdmin(admin.ModelAdmin):$/;"	c
 GroupDeleteView	students/views/groups.py	/^class GroupDeleteView(DeleteView):$/;"	c
 GroupFormAdmin	students/admin.py	/^class GroupFormAdmin(ModelForm):$/;"	c
 INSTALLED_APPS	studentsdb/settings.py	/^INSTALLED_APPS = ($/;"	v
+JournalView	students/views/journal.py	/^class JournalView(TemplateView):$/;"	c
 LANGUAGE_CODE	studentsdb/settings.py	/^LANGUAGE_CODE = 'uk'$/;"	v
 MANAGERS	studentsdb/settings.py	/^MANAGERS = ($/;"	v
 MEDIA_ROOT	studentsdb/settings.py	/^MEDIA_ROOT = os.path.join(BASE_DIR, '..', 'media')$/;"	v
@@ -92,6 +93,7 @@ form	students/admin.py	/^    form =  StudentFormAdmin$/;"	v	class:StudentAdmin
 form_class	students/views/contact_admin.py	/^    form_class = ContactAdmin$/;"	v	class:ContactAdminView
 form_class	students/views/students.py	/^    form_class = StudentCreateForm$/;"	v	class:StudentCreateView
 form_class	students/views/students.py	/^    form_class = StudentUpdateForm$/;"	v	class:StudentUpdateView
+get_context_data	students/views/journal.py	/^    def get_context_data(self, **kwargs):$/;"	m	class:JournalView
 get_success_url	students/views/contact_admin.py	/^    def get_success_url(self):$/;"	m	class:ContactAdminView
 get_success_url	students/views/students.py	/^    def get_success_url(self):$/;"	m	class:StudentCreateView
 get_success_url	students/views/students.py	/^    def get_success_url(self):$/;"	m	class:StudentDeleteView
@@ -99,7 +101,6 @@ get_success_url	students/views/students.py	/^    def get_success_url(self):$/;"	
 groups_add	students/views/groups.py	/^def groups_add(request):$/;"	f
 groups_edit	students/views/groups.py	/^def groups_edit(request, gid):$/;"	f
 groups_list	students/views/groups.py	/^def groups_list(request):$/;"	f
-journal	students/views/journal.py	/^def journal(request):$/;"	f
 last_name	students/models/student.py	/^    last_name = models.CharField($/;"	v	class:Student
 leader	students/models/group.py	/^    leader = models.OneToOneField(Student,$/;"	v	class:Group
 list_display	students/admin.py	/^    list_display = ['last_name', 'first_name', 'ticket', 'student_group']$/;"	v	class:StudentAdmin
@@ -133,7 +134,6 @@ name	studentsdb/urls.py	/^        name='groups'),$/;"	v
 name	studentsdb/urls.py	/^        name='groups_add'),$/;"	v
 name	studentsdb/urls.py	/^        name='groups_delete'),$/;"	v
 name	studentsdb/urls.py	/^        name='groups_edit'),$/;"	v
-name	studentsdb/urls.py	/^        name='journal'),$/;"	v
 name	studentsdb/urls.py	/^        name='students_add'),$/;"	v
 name	studentsdb/urls.py	/^        name='students_delete'),$/;"	v
 name	studentsdb/urls.py	/^        name='students_edit'),$/;"	v
@@ -152,39 +152,10 @@ ordering	students/admin.py	/^    ordering = ['last_name']$/;"	v	class:StudentAdm
 ordering	students/admin.py	/^    ordering = ['title']$/;"	v	class:GroupAdmin
 ordering	students/models/student.py	/^        ordering = ['id']$/;"	v	class:Student.Meta
 photo	students/models/student.py	/^    photo = models.ImageField($/;"	v	class:Student
+post	students/views/journal.py	/^    def post(self, request, *args, **kwargs):$/;"	m	class:JournalView
 post	students/views/students.py	/^    def post(self, request, *args, **kwargs):$/;"	m	class:StudentCreateView
 post	students/views/students.py	/^    def post(self, request, *args, **kwargs):$/;"	m	class:StudentUpdateView
-present_day1	students/models/monthjournal.py	/^    present_day1 = models.BooleanField(default=False)$/;"	v	class:MonthJournal
-present_day10	students/models/monthjournal.py	/^    present_day10 = models.BooleanField(default=False)$/;"	v	class:MonthJournal
-present_day11	students/models/monthjournal.py	/^    present_day11 = models.BooleanField(default=False)$/;"	v	class:MonthJournal
-present_day12	students/models/monthjournal.py	/^    present_day12 = models.BooleanField(default=False)$/;"	v	class:MonthJournal
-present_day13	students/models/monthjournal.py	/^    present_day13 = models.BooleanField(default=False)$/;"	v	class:MonthJournal
-present_day14	students/models/monthjournal.py	/^    present_day14 = models.BooleanField(default=False)$/;"	v	class:MonthJournal
-present_day15	students/models/monthjournal.py	/^    present_day15 = models.BooleanField(default=False)$/;"	v	class:MonthJournal
-present_day16	students/models/monthjournal.py	/^    present_day16 = models.BooleanField(default=False)$/;"	v	class:MonthJournal
-present_day17	students/models/monthjournal.py	/^    present_day17 = models.BooleanField(default=False)$/;"	v	class:MonthJournal
-present_day18	students/models/monthjournal.py	/^    present_day18 = models.BooleanField(default=False)$/;"	v	class:MonthJournal
-present_day19	students/models/monthjournal.py	/^    present_day19 = models.BooleanField(default=False)$/;"	v	class:MonthJournal
-present_day2	students/models/monthjournal.py	/^    present_day2 = models.BooleanField(default=False)$/;"	v	class:MonthJournal
-present_day20	students/models/monthjournal.py	/^    present_day20 = models.BooleanField(default=False)$/;"	v	class:MonthJournal
-present_day21	students/models/monthjournal.py	/^    present_day21 = models.BooleanField(default=False)$/;"	v	class:MonthJournal
-present_day22	students/models/monthjournal.py	/^    present_day22 = models.BooleanField(default=False)$/;"	v	class:MonthJournal
-present_day23	students/models/monthjournal.py	/^    present_day23 = models.BooleanField(default=False)$/;"	v	class:MonthJournal
-present_day24	students/models/monthjournal.py	/^    present_day24 = models.BooleanField(default=False)$/;"	v	class:MonthJournal
-present_day25	students/models/monthjournal.py	/^    present_day25 = models.BooleanField(default=False)$/;"	v	class:MonthJournal
-present_day26	students/models/monthjournal.py	/^    present_day26 = models.BooleanField(default=False)$/;"	v	class:MonthJournal
-present_day27	students/models/monthjournal.py	/^    present_day27 = models.BooleanField(default=False)$/;"	v	class:MonthJournal
-present_day28	students/models/monthjournal.py	/^    present_day28 = models.BooleanField(default=False)$/;"	v	class:MonthJournal
-present_day29	students/models/monthjournal.py	/^    present_day29 = models.BooleanField(default=False)$/;"	v	class:MonthJournal
-present_day3	students/models/monthjournal.py	/^    present_day3 = models.BooleanField(default=False)$/;"	v	class:MonthJournal
-present_day30	students/models/monthjournal.py	/^    present_day30 = models.BooleanField(default=False)$/;"	v	class:MonthJournal
-present_day31	students/models/monthjournal.py	/^    present_day31 = models.BooleanField(default=False)$/;"	v	class:MonthJournal
-present_day4	students/models/monthjournal.py	/^    present_day4 = models.BooleanField(default=False)$/;"	v	class:MonthJournal
-present_day5	students/models/monthjournal.py	/^    present_day5 = models.BooleanField(default=False)$/;"	v	class:MonthJournal
-present_day6	students/models/monthjournal.py	/^    present_day6 = models.BooleanField(default=False)$/;"	v	class:MonthJournal
-present_day7	students/models/monthjournal.py	/^    present_day7 = models.BooleanField(default=False)$/;"	v	class:MonthJournal
-present_day8	students/models/monthjournal.py	/^    present_day8 = models.BooleanField(default=False)$/;"	v	class:MonthJournal
-present_day9	students/models/monthjournal.py	/^    present_day9 = models.BooleanField(default=False)$/;"	v	class:MonthJournal
+present_day	students/models/monthjournal.py	/^    present_day = [models.BooleanField(default=False) for x in range(31)]$/;"	v	class:MonthJournal
 project_opened	.ropeproject/config.py	/^def project_opened(project):$/;"	f
 project_opened	students/.ropeproject/config.py	/^def project_opened(project):$/;"	f
 project_opened	studentsdb/.ropeproject/config.py	/^def project_opened(project):$/;"	f
@@ -201,6 +172,7 @@ students_proc	studentsdb/context_processors.py	/^def students_proc(request):$/;"
 subject	students/forms/forms.py	/^    subject = forms.CharField($/;"	v	class:ContactAdmin
 template_name	students/views/contact_admin.py	/^    template_name = 'contact_form\/contact_admin_sent.html'$/;"	v	class:SuccessSentView
 template_name	students/views/groups.py	/^    template_name = 'students\/group_confirm_delete.html'$/;"	v	class:GroupDeleteView
+template_name	students/views/journal.py	/^    template_name = 'students\/journal.html'$/;"	v	class:JournalView
 template_name	students/views/students.py	/^    template_name = 'students\/students_confirm_delete.html'$/;"	v	class:StudentDeleteView
 template_name	students/views/students.py	/^    template_name = 'students\/students_form.html'$/;"	v	class:StudentCreateView
 template_name	students/views/students.py	/^    template_name = 'students\/students_form.html'$/;"	v	class:StudentUpdateView
