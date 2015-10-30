@@ -150,6 +150,7 @@ h5	students/static/css/main.css	/^h1, h2, h3, h4, h5, h6 {$/;"	s
 h6	students/static/css/main.css	/^h1, h2, h3, h4, h5, h6 {$/;"	s
 imghdr	students/views/students.py	/^import imghdr$/;"	i
 include	studentsdb/urls.py	/^from django.conf.urls import patterns, include, url$/;"	i
+initDateFields	students/static/js/main.js	/^function initDateFields() {$/;"	f
 initGroupSelector	students/static/js/main.js	/^function initGroupSelector() {$/;"	f
 initJournal	students/static/js/main.js	/^function initJournal() {$/;"	f
 input	students/static/css/main.css	/^input {$/;"	s
