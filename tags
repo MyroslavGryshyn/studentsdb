@@ -4,6 +4,11 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+#ajax-progress-indicator	students/static/css/main.css	/^#ajax-progress-indicator {$/;"	i
+#footer	students/static/css/main.css	/^#footer {$/;"	i
+#group-selector	students/static/css/main.css	/^#group-selector {$/;"	i
+#group-selector select	students/static/css/main.css	/^#group-selector select {$/;"	s
+.alert	students/static/css/main.css	/^.alert {$/;"	c
 ADMINS	studentsdb/settings.py	/^ADMINS = ADMIN_EMAIL$/;"	v
 ADMIN_EMAIL	studentsdb/settings.py	/^ADMIN_EMAIL = 'sergiy.1911@gmail.com'$/;"	v
 ALLOWED_HOSTS	studentsdb/settings.py	/^ALLOWED_HOSTS = []$/;"	v
@@ -109,7 +114,14 @@ get_success_url	students/views/students.py	/^    def get_success_url(self):$/;"	
 groups_add	students/views/groups.py	/^def groups_add(request):$/;"	f
 groups_edit	students/views/groups.py	/^def groups_edit(request, gid):$/;"	f
 groups_list	students/views/groups.py	/^def groups_list(request):$/;"	f
+h1	students/static/css/main.css	/^h1, h2, h3, h4, h5, h6 {$/;"	s
+h2	students/static/css/main.css	/^h1, h2, h3, h4, h5, h6 {$/;"	s
+h3	students/static/css/main.css	/^h1, h2, h3, h4, h5, h6 {$/;"	s
+h4	students/static/css/main.css	/^h1, h2, h3, h4, h5, h6 {$/;"	s
+h5	students/static/css/main.css	/^h1, h2, h3, h4, h5, h6 {$/;"	s
+h6	students/static/css/main.css	/^h1, h2, h3, h4, h5, h6 {$/;"	s
 initJournal	students/static/js/main.js	/^function initJournal() {$/;"	f
+input	students/static/css/main.css	/^input {$/;"	s
 last_name	students/models/student.py	/^    last_name = models.CharField($/;"	v	class:Student
 leader	students/models/group.py	/^    leader = models.OneToOneField(Student,$/;"	v	class:Group
 list_display	students/admin.py	/^    list_display = ['last_name', 'first_name', 'ticket', 'student_group']$/;"	v	class:StudentAdmin
@@ -206,6 +218,7 @@ reverse	students/views/journal.py	/^from django.core.urlresolvers import reverse
 save	students/forms/forms.py	/^    def save(self, fail_silently=False):$/;"	m	class:ContactAdmin
 search_fields	students/admin.py	/^    search_fields = ['last_name', 'first_name', $/;"	v	class:StudentAdmin
 search_fields	students/admin.py	/^    search_fields = ['title', 'leader', $/;"	v	class:GroupAdmin
+select	students/static/css/main.css	/^select,$/;"	s
 set_prefs	.ropeproject/config.py	/^def set_prefs(prefs):$/;"	f
 set_prefs	students/.ropeproject/config.py	/^def set_prefs(prefs):$/;"	f
 set_prefs	studentsdb/.ropeproject/config.py	/^def set_prefs(prefs):$/;"	f
@@ -214,12 +227,15 @@ student_group	students/models/student.py	/^    student_group = models.ForeignKey
 students_list	students/views/students.py	/^def students_list(request):$/;"	f
 students_proc	studentsdb/context_processors.py	/^def students_proc(request):$/;"	f
 subject	students/forms/forms.py	/^    subject = forms.CharField($/;"	v	class:ContactAdmin
+td.day-box	students/static/css/main.css	/^td.day-box,$/;"	c
 template_name	students/views/contact_admin.py	/^    template_name = 'contact_form\/contact_admin_sent.html'$/;"	v	class:SuccessSentView
 template_name	students/views/groups.py	/^    template_name = 'students\/group_confirm_delete.html'$/;"	v	class:GroupDeleteView
 template_name	students/views/journal.py	/^    template_name = 'students\/journal.html'$/;"	v	class:JournalView
 template_name	students/views/students.py	/^    template_name = 'students\/students_confirm_delete.html'$/;"	v	class:StudentDeleteView
 template_name	students/views/students.py	/^    template_name = 'students\/students_form.html'$/;"	v	class:StudentCreateView
 template_name	students/views/students.py	/^    template_name = 'students\/students_form.html'$/;"	v	class:StudentUpdateView
+textarea	students/static/css/main.css	/^textarea,$/;"	s
+th.day-header	students/static/css/main.css	/^th.day-header {$/;"	c
 ticket	students/models/student.py	/^    ticket = models.CharField($/;"	v	class:Student
 title	students/models/group.py	/^    title = models.CharField($/;"	v	class:Group
 unique_for_month	students/models/monthjournal.py	/^        unique_for_month='date')$/;"	v	class:MonthJournal
