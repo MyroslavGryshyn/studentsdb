@@ -80,7 +80,7 @@
          <ul class="dropdown-menu" role="menu">
            <li><a href="{% url "students_edit" student.id %}">
                          Редагувати</a></li>
-           <li><a href="/journal/{{ student.id }}">
+           <li><a href="{% url "journal" student.id %}">
                          Відвідування</a></li>
            <li><a href="{% url "students_delete" student.id %}">
                          Видалити</a></li>

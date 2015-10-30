@@ -16,25 +16,37 @@ BASE_DIR	studentsdb/settings.py	/^BASE_DIR = os.path.dirname(os.path.dirname(os.
 CRISPY_TEMPLATE_PACK	studentsdb/settings.py	/^CRISPY_TEMPLATE_PACK = 'bootstrap3'$/;"	v
 ContactAdmin	students/forms/forms.py	/^class ContactAdmin(ContactForm):$/;"	c
 ContactAdminView	students/views/contact_admin.py	/^class ContactAdminView(ContactFormView):$/;"	c
+ContactAdminView	studentsdb/urls.py	/^from students.views.contact_admin import ContactAdminView, SuccessSentView$/;"	i
+CreateView	students/views/students.py	/^from django.views.generic import UpdateView, CreateView, DeleteView$/;"	i
 DATABASES	studentsdb/db.py	/^DATABASES = {$/;"	v
+DATABASES	studentsdb/settings.py	/^from .db import DATABASES$/;"	i
 DEBUG	studentsdb/settings.py	/^DEBUG = True$/;"	v
+DEBUG	studentsdb/urls.py	/^from .settings import MEDIA_ROOT, DEBUG$/;"	i
 DEFAULT_FROM_EMAIL	studentsdb/settings.py	/^DEFAULT_FROM_EMAIL = 'mero@mail.com'$/;"	v
+DeleteView	students/views/students.py	/^from django.views.generic import UpdateView, CreateView, DeleteView$/;"	i
 EMAIL_HOST	studentsdb/settings.py	/^EMAIL_HOST = 'smtp.mandrillapp.com'$/;"	v
 EMAIL_HOST_PASSWORD	studentsdb/settings.py	/^EMAIL_HOST_PASSWORD = 'm81NjVMs5I8bSbkl_9RbDQ'$/;"	v
 EMAIL_HOST_USER	studentsdb/settings.py	/^EMAIL_HOST_USER = 'admin@fayna-chayna.com.ua'$/;"	v
 EMAIL_PORT	studentsdb/settings.py	/^EMAIL_PORT = '587'$/;"	v
 EMAIL_USE_SSL	studentsdb/settings.py	/^EMAIL_USE_SSL = False$/;"	v
 EMAIL_USE_TLS	studentsdb/settings.py	/^EMAIL_USE_TLS = True$/;"	v
+EmptyPage	students/views/students.py	/^from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger$/;"	i
 Group	students/models/group.py	/^class Group(models.Model):$/;"	c
+Group	students/views/students.py	/^from ..models import Student, Group$/;"	i
 GroupAdmin	students/admin.py	/^class GroupAdmin(admin.ModelAdmin):$/;"	c
 GroupDeleteView	students/views/groups.py	/^class GroupDeleteView(DeleteView):$/;"	c
+GroupDeleteView	studentsdb/urls.py	/^from students.views.groups import GroupDeleteView$/;"	i
 GroupFormAdmin	students/admin.py	/^class GroupFormAdmin(ModelForm):$/;"	c
+HttpResponse	students/views/students.py	/^from django.http import HttpResponse, HttpResponseRedirect$/;"	i
+HttpResponseRedirect	students/views/students.py	/^from django.http import HttpResponse, HttpResponseRedirect$/;"	i
 INSTALLED_APPS	studentsdb/settings.py	/^INSTALLED_APPS = ($/;"	v
 JournalView	students/views/journal.py	/^class JournalView(TemplateView):$/;"	c
+JournalView	studentsdb/urls.py	/^from students.views.journal import JournalView$/;"	i
 JsonResponse	students/views/journal.py	/^from django.http import JsonResponse$/;"	i
 LANGUAGE_CODE	studentsdb/settings.py	/^LANGUAGE_CODE = 'uk'$/;"	v
 MANAGERS	studentsdb/settings.py	/^MANAGERS = ($/;"	v
 MEDIA_ROOT	studentsdb/settings.py	/^MEDIA_ROOT = os.path.join(BASE_DIR, '..', 'media')$/;"	v
+MEDIA_ROOT	studentsdb/urls.py	/^from .settings import MEDIA_ROOT, DEBUG$/;"	i
 MEDIA_URL	studentsdb/settings.py	/^MEDIA_URL = '\/media\/'$/;"	v
 MIDDLEWARE_CLASSES	studentsdb/settings.py	/^MIDDLEWARE_CLASSES = ($/;"	v
 Meta	students/forms/forms.py	/^    class Meta:$/;"	c	class:StudentCreateForm
@@ -46,18 +58,27 @@ Migration	students/migrations/0001_initial.py	/^class Migration(migrations.Migra
 Migration	students/migrations/0002_monthjournal.py	/^class Migration(migrations.Migration):$/;"	c
 MonthJournal	students/models/monthjournal.py	/^class MonthJournal(models.Model):$/;"	c
 MonthJournal	students/views/journal.py	/^from ..models import MonthJournal, Student$/;"	i
+PageNotAnInteger	students/views/students.py	/^from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger$/;"	i
+Paginator	students/views/students.py	/^from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger$/;"	i
 ROOT_URLCONF	studentsdb/settings.py	/^ROOT_URLCONF = 'studentsdb.urls'$/;"	v
 STATIC_URL	studentsdb/settings.py	/^STATIC_URL = '\/static\/'$/;"	v
 Student	students/models/student.py	/^class Student(models.Model):$/;"	c
 Student	students/views/journal.py	/^from ..models import MonthJournal, Student$/;"	i
+Student	students/views/students.py	/^from ..models import Student, Group$/;"	i
 StudentAdmin	students/admin.py	/^class StudentAdmin(admin.ModelAdmin):$/;"	c
 StudentCreateForm	students/forms/forms.py	/^class StudentCreateForm(ModelForm):$/;"	c
+StudentCreateForm	students/views/students.py	/^from ..forms.forms import StudentUpdateForm, StudentCreateForm$/;"	i
 StudentCreateView	students/views/students.py	/^class StudentCreateView(CreateView):$/;"	c
+StudentCreateView	studentsdb/urls.py	/^                                    StudentDeleteView$/;"	i
 StudentDeleteView	students/views/students.py	/^class StudentDeleteView(DeleteView):$/;"	c
+StudentDeleteView	studentsdb/urls.py	/^                                    StudentDeleteView$/;"	i
 StudentFormAdmin	students/admin.py	/^class StudentFormAdmin(ModelForm):$/;"	c
 StudentUpdateForm	students/forms/forms.py	/^class StudentUpdateForm(ModelForm):$/;"	c
+StudentUpdateForm	students/views/students.py	/^from ..forms.forms import StudentUpdateForm, StudentCreateForm$/;"	i
 StudentUpdateView	students/views/students.py	/^class StudentUpdateView(UpdateView):$/;"	c
+StudentUpdateView	studentsdb/urls.py	/^                                    StudentDeleteView$/;"	i
 SuccessSentView	students/views/contact_admin.py	/^class SuccessSentView(TemplateView):$/;"	c
+SuccessSentView	studentsdb/urls.py	/^from students.views.contact_admin import ContactAdminView, SuccessSentView$/;"	i
 TEMPLATES	studentsdb/settings.py	/^TEMPLATES = [$/;"	v
 TEMPLATE_CONTEXT_PROCESSORS	studentsdb/settings.py	/^    global_settings.TEMPLATE_CONTEXT_PROCESSORS + ($/;"	v
 TIME_ZONE	studentsdb/settings.py	/^TIME_ZONE = 'UTC'$/;"	v
@@ -65,6 +86,7 @@ TemplateView	students/views/journal.py	/^from django.views.generic.base import T
 USE_I18N	studentsdb/settings.py	/^USE_I18N = True$/;"	v
 USE_L10N	studentsdb/settings.py	/^USE_L10N = True$/;"	v
 USE_TZ	studentsdb/settings.py	/^USE_TZ = True$/;"	v
+UpdateView	students/views/students.py	/^from django.views.generic import UpdateView, CreateView, DeleteView$/;"	i
 WSGI_APPLICATION	studentsdb/settings.py	/^WSGI_APPLICATION = 'studentsdb.wsgi.application'$/;"	v
 __init__	students/forms/forms.py	/^    def __init__(self, *args, **kwargs):$/;"	m	class:StudentCreateForm
 __init__	students/forms/forms.py	/^    def __init__(self, *args, **kwargs):$/;"	m	class:StudentUpdateForm
@@ -73,6 +95,7 @@ __unicode__	students/models/group.py	/^    def __unicode__(self):$/;"	m	class:Gr
 __unicode__	students/models/monthjournal.py	/^    def __unicode__(self):$/;"	m	class:MonthJournal
 __unicode__	students/models/student.py	/^    def __unicode__(self):$/;"	m	class:Student	file:
 actions	students/admin.py	/^    actions = ['make_copy']$/;"	v	class:StudentAdmin
+admin	studentsdb/urls.py	/^from django.contrib import admin$/;"	i
 application	studentsdb/wsgi.py	/^application = get_wsgi_application()$/;"	v
 birthday	students/models/student.py	/^    birthday = models.DateField($/;"	v	class:Student
 blank	students/models/group.py	/^        blank=False,$/;"	v	class:Group.Meta
@@ -88,6 +111,7 @@ clean_student_group	students/forms/forms.py	/^    def clean_student_group(self):
 date	students/models/monthjournal.py	/^    date = models.DateField($/;"	v	class:MonthJournal
 date	students/views/journal.py	/^from datetime import datetime, date$/;"	i
 datetime	students/views/journal.py	/^from datetime import datetime, date$/;"	i
+datetime	students/views/students.py	/^from datetime import datetime$/;"	i
 day_abbr	students/views/journal.py	/^from calendar import monthrange, weekday, day_abbr$/;"	i
 default	students/models/student.py	/^        default='')$/;"	v	class:Student.Meta
 delete	students/views/groups.py	/^    def delete(self, request, *args, **kwargs):$/;"	m	class:GroupDeleteView
@@ -107,19 +131,26 @@ form_class	students/views/students.py	/^    form_class = StudentCreateForm$/;"	v
 form_class	students/views/students.py	/^    form_class = StudentUpdateForm$/;"	v	class:StudentUpdateView
 get_context_data	students/views/journal.py	/^    def get_context_data(self, **kwargs):$/;"	m	class:JournalView
 get_current_group	students/views/journal.py	/^from ..util import paginate, get_current_group$/;"	i
+get_current_group	students/views/students.py	/^from ..util import get_current_group$/;"	i
+get_groups	students/context_processors.py	/^from .util import get_groups$/;"	i
 get_success_url	students/views/contact_admin.py	/^    def get_success_url(self):$/;"	m	class:ContactAdminView
 get_success_url	students/views/students.py	/^    def get_success_url(self):$/;"	m	class:StudentCreateView
 get_success_url	students/views/students.py	/^    def get_success_url(self):$/;"	m	class:StudentDeleteView
 get_success_url	students/views/students.py	/^    def get_success_url(self):$/;"	m	class:StudentUpdateView
+global_settings	studentsdb/settings.py	/^from django.conf import global_settings$/;"	i
 groups_add	students/views/groups.py	/^def groups_add(request):$/;"	f
 groups_edit	students/views/groups.py	/^def groups_edit(request, gid):$/;"	f
 groups_list	students/views/groups.py	/^def groups_list(request):$/;"	f
+groups_processor	students/context_processors.py	/^def groups_processor(request):$/;"	f
 h1	students/static/css/main.css	/^h1, h2, h3, h4, h5, h6 {$/;"	s
 h2	students/static/css/main.css	/^h1, h2, h3, h4, h5, h6 {$/;"	s
 h3	students/static/css/main.css	/^h1, h2, h3, h4, h5, h6 {$/;"	s
 h4	students/static/css/main.css	/^h1, h2, h3, h4, h5, h6 {$/;"	s
 h5	students/static/css/main.css	/^h1, h2, h3, h4, h5, h6 {$/;"	s
 h6	students/static/css/main.css	/^h1, h2, h3, h4, h5, h6 {$/;"	s
+imghdr	students/views/students.py	/^import imghdr$/;"	i
+include	studentsdb/urls.py	/^from django.conf.urls import patterns, include, url$/;"	i
+initGroupSelector	students/static/js/main.js	/^function initGroupSelector() {$/;"	f
 initJournal	students/static/js/main.js	/^function initJournal() {$/;"	f
 input	students/static/css/main.css	/^input {$/;"	s
 last_name	students/models/student.py	/^    last_name = models.CharField($/;"	v	class:Student
@@ -137,6 +168,7 @@ load_more	students/static/js/load-page.js	/^function load_more() {$/;"	f
 make_copy	students/admin.py	/^    def make_copy(self, request, queryset):$/;"	m	class:StudentAdmin
 max_length	students/models/group.py	/^        max_length=256,$/;"	v	class:Group.Meta
 max_length	students/models/student.py	/^        max_length=256,$/;"	v	class:Student.Meta
+messages	students/views/students.py	/^from django.contrib import messages$/;"	i
 middle_name	students/models/student.py	/^    middle_name = models.CharField($/;"	v	class:Student
 model	students/forms/forms.py	/^        model = Student$/;"	v	class:StudentCreateForm.Meta
 model	students/forms/forms.py	/^        model = Student$/;"	v	class:StudentUpdateForm.Meta
@@ -174,7 +206,9 @@ options	students/migrations/0002_monthjournal.py	/^            options={$/;"	v	c
 ordering	students/admin.py	/^    ordering = ['last_name']$/;"	v	class:StudentAdmin
 ordering	students/admin.py	/^    ordering = ['title']$/;"	v	class:GroupAdmin
 ordering	students/models/student.py	/^        ordering = ['id']$/;"	v	class:Student.Meta
+os	studentsdb/settings.py	/^import os$/;"	i
 paginate	students/views/journal.py	/^from ..util import paginate, get_current_group$/;"	i
+patterns	studentsdb/urls.py	/^from django.conf.urls import patterns, include, url$/;"	i
 photo	students/models/student.py	/^    photo = models.ImageField($/;"	v	class:Student
 post	students/views/journal.py	/^    def post(self, request, *args, **kwargs):$/;"	m	class:JournalView
 post	students/views/students.py	/^    def post(self, request, *args, **kwargs):$/;"	m	class:StudentCreateView
@@ -214,7 +248,9 @@ project_opened	.ropeproject/config.py	/^def project_opened(project):$/;"	f
 project_opened	students/.ropeproject/config.py	/^def project_opened(project):$/;"	f
 project_opened	studentsdb/.ropeproject/config.py	/^def project_opened(project):$/;"	f
 relativedelta	students/views/journal.py	/^from dateutil.relativedelta import relativedelta$/;"	i
+render	students/views/students.py	/^from django.shortcuts import render$/;"	i
 reverse	students/views/journal.py	/^from django.core.urlresolvers import reverse$/;"	i
+reverse	students/views/students.py	/^from django.core.urlresolvers import reverse$/;"	i
 save	students/forms/forms.py	/^    def save(self, fail_silently=False):$/;"	m	class:ContactAdmin
 search_fields	students/admin.py	/^    search_fields = ['last_name', 'first_name', $/;"	v	class:StudentAdmin
 search_fields	students/admin.py	/^    search_fields = ['title', 'leader', $/;"	v	class:GroupAdmin
@@ -239,6 +275,7 @@ th.day-header	students/static/css/main.css	/^th.day-header {$/;"	c
 ticket	students/models/student.py	/^    ticket = models.CharField($/;"	v	class:Student
 title	students/models/group.py	/^    title = models.CharField($/;"	v	class:Group
 unique_for_month	students/models/monthjournal.py	/^        unique_for_month='date')$/;"	v	class:MonthJournal
+url	studentsdb/urls.py	/^from django.conf.urls import patterns, include, url$/;"	i
 urlpatterns	studentsdb/urls.py	/^urlpatterns = patterns('',$/;"	v
 verbose_name	students/models/group.py	/^        verbose_name = u"Група"$/;"	v	class:Group.Meta
 verbose_name	students/models/group.py	/^        verbose_name=u"Додаткові нотатки")$/;"	v	class:Group.Meta

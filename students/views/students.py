@@ -12,6 +12,7 @@ from django.contrib import messages
 from ..models import Student, Group
 from ..forms.forms import StudentUpdateForm, StudentCreateForm
 
+from ..util import get_current_group
 
 #Class based views for Students
 class StudentUpdateView(UpdateView):
@@ -62,7 +63,14 @@ class StudentDeleteView(DeleteView):
 # Views for Students
 
 def students_list(request):
-    students = Student.objects.all()
+   # check if we need to show only one group of students
+    current_group = get_current_group(request)
+
+    if current_group:
+        students = Student.objects.filter(student_group=current_group)
+    else:
+        # otherwise show all students
+        students = Student.objects.all() 
 
     # try to order students list
     order_by = request.GET.get('order_by', '')
